@@ -1,1063 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Almana Recovery & Aesthetics — Concierge Post-Surgical Recovery in Northern Virginia</title>
-<meta name="description" content="Almana Recovery & Aesthetics offers concierge post-surgical recovery, lymphatic drainage, and luxury aesthetic treatments in Springfield, Virginia. Heal beautifully. Recover with dignity.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M15 60 Q50 15 85 60' stroke='%23C9A876' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ctext x='50' y='85' text-anchor='middle' font-family='serif' font-size='32' fill='%233D2418'%3EA%3C/text%3E%3C/svg%3E">
+<title>Almana Recovery &amp; Aesthetics — Concierge Post-Surgical Recovery in Northern Virginia</title>
+<meta name="description" content="Almana Recovery &amp; Aesthetics offers concierge post-surgical recovery, lymphatic drainage, and luxury aesthetic treatments in Springfield, Virginia. Heal beautifully. Recover with dignity.">
+<link rel="canonical" href="https://www.almanarecovery.com/">
+<meta property="og:title" content="Almana Recovery &amp; Aesthetics">
+<meta property="og:description" content="Private, nurse-led post-surgical recovery and luxury aesthetic care in Northern Virginia.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.almanarecovery.com/">
+<meta property="og:image" content="https://www.almanarecovery.com/assets/founders.jpg">
+<meta name="theme-color" content="#4A3B2A">
+<link rel="icon" href="assets/logo.png">
+
+<!--
+  ============================================================
+  PLACEHOLDERS TO FILL IN (search these):
+    BOOKING_URL  ...... wired to Acuity (live)
+    PAYMENT_URL  ...... "Existing Patients" -> future payment portal (href="#" for now)
+    WHATSAPP_URL ...... utility-bar WhatsApp link (href="#" for now)
+    PHONE ............. currently 703.597.4866 (from live site); swap to new shared number when set
+    CONTACT_ENDPOINT .. inquiry form POST target (Cloudflare Tunnel -> almana_webform); mailto fallback active
+  ============================================================
+-->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --cream: #F5EBE0;
-    --cream-soft: #FAF3E8;
-    --beige: #EADBC8;
-    --beige-warm: #E8D8C0;
-    --espresso: #3D2418;
-    --cocoa: #6B4A35;
-    --cocoa-soft: #8B6E58;
-    --gold: #C9A876;
-    --gold-muted: #B8966A;
-    --gold-pale: #E5D4B0;
-    --line: rgba(61, 36, 24, 0.12);
-    --shadow: 0 30px 60px -25px rgba(61, 36, 24, 0.15);
-  }
+:root{
+ --espresso:#4A3B2A; --espresso-dark:#2C2622; --olive:#6E7F63; --sage:#8A9A7B;
+ --sage-light:#8FA37E; --gold:#B08D57; --gold-light:#DDC79A;
+ --cream:#F9F1EB; --cream2:#FCF9F2; --ivory:#F4EBDA; --sand:#EFE6D3; --panel:#E7DBC2;
+ --text:#5a4f3d; --muted:#8a7f6d; --page:#faf9f5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.container{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.label{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
+.serif{font-family:'Playfair Display',serif}
+.cormorant{font-family:'Cormorant Garamond',serif}
+.btn{display:inline-flex;align-items:center;gap:12px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border-radius:100px;padding:16px 36px;transition:.2s;cursor:pointer;border:none}
+.btn-olive{background:var(--olive);color:var(--cream)}
+.btn-olive:hover{background:#5c6b53}
+.btn-gold{background:var(--gold);color:var(--espresso-dark)}
+.btn-gold:hover{background:#a07d47}
+.btn-outline{border:1px solid var(--gold);color:var(--espresso);background:transparent}
+.btn-outline:hover{background:var(--gold);color:var(--cream)}
+.textlink{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--olive);border-bottom:1px solid var(--olive);padding-bottom:3px}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--cream);
-    color: var(--espresso);
-    line-height: 1.7;
-    font-weight: 300;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-  }
+/* utility bar */
+.topbar{background:var(--espresso);color:var(--panel);font-family:'Montserrat',sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.topbar a{display:inline-flex;align-items:center;gap:8px}
+.topbar .grp{display:flex;align-items:center;gap:16px;white-space:nowrap}
+.diamond{color:var(--gold)}
+.pill-ghost{font-family:'Montserrat',sans-serif;letter-spacing:.16em;color:var(--ivory);border:1px solid rgba(176,141,87,.7);border-radius:100px;padding:5px 15px;transition:.2s}
+.pill-ghost:hover{background:rgba(176,141,87,.2)}
 
-  h1, h2, h3, h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 400;
-    color: var(--espresso);
-    letter-spacing: 0.01em;
-    line-height: 1.15;
-  }
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(249,241,235,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(74,59,42,.1)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.nav img{height:58px;width:auto}
+.nav .links{display:flex;align-items:center;gap:40px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text);font-weight:500}
+.nav .links a:hover{color:var(--olive)}
+.nav .book{font-size:11px;padding:13px 26px}
+#navtoggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+#navtoggle span{width:24px;height:2px;background:var(--espresso);display:block}
 
-  a { color: var(--cocoa); text-decoration: none; transition: color 0.3s ease; }
-  a:hover { color: var(--gold); }
+/* hero */
+.hero{max-width:900px;margin:0 auto;text-align:center;padding:88px 40px 72px}
+.hero .logo{width:340px;max-width:80%;margin:0 auto 26px}
+.hero .kicker{font-family:'Montserrat',sans-serif;font-size:26px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;line-height:1.35;max-width:22ch;margin:0 auto 26px}
+.hero p{font-size:18px;line-height:1.75;color:var(--text);max-width:56ch;margin:0 auto 38px}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.hero-band{max-width:1240px;margin:0 auto;padding:0 40px 96px}
+.hero-band .frame{height:440px;border-radius:16px;overflow:hidden;border:1px solid rgba(74,59,42,.08)}
+.hero-band img{width:100%;height:100%;object-fit:cover;object-position:center}
 
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-  .narrow { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+/* who we are */
+.who{max-width:1000px;margin:0 auto;text-align:center;padding:16px 40px 92px}
+.who .statement{font-family:'Playfair Display',serif;font-weight:400;font-size:34px;line-height:1.42;color:var(--olive);max-width:24ch;margin:24px auto 0}
+.who p.body{font-size:16px;line-height:1.8;color:var(--text);max-width:60ch;margin:28px auto 0}
 
-  /* ===== NAV ===== */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: rgba(245, 235, 224, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 100;
-    border-bottom: 1px solid var(--line);
-    transition: padding 0.3s ease;
-  }
-  .nav-inner {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 1.2rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--espresso);
-    letter-spacing: 0.18em;
-  }
-  .nav-logo span { color: var(--gold); font-size: 0.65em; letter-spacing: 0.25em; display: block; margin-top: -2px; font-family: 'Montserrat', sans-serif; font-weight: 400; }
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem;
-    align-items: center;
-  }
-  .nav-links a {
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 400;
-    color: var(--espresso);
-  }
-  .nav-cta {
-    background: var(--espresso);
-    color: var(--cream) !important;
-    padding: 0.85rem 1.6rem;
-    border-radius: 2px;
-    font-size: 0.72rem !important;
-    transition: all 0.3s ease;
-  }
-  .nav-cta:hover { background: var(--cocoa); color: var(--cream-soft) !important; }
-  .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-  .menu-toggle span { display: block; width: 24px; height: 1.5px; background: var(--espresso); margin: 5px 0; transition: 0.3s; }
+/* trust row */
+.trust{background:var(--sand);border-top:1px solid rgba(74,59,42,.08);border-bottom:1px solid rgba(74,59,42,.08)}
+.trust .container{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;padding-top:44px;padding-bottom:44px}
+.trust .num{font-family:'Playfair Display',serif;font-size:30px;color:var(--espresso);margin-bottom:6px}
 
-  @media (max-width: 860px) {
-    .menu-toggle { display: block; }
-    .nav-links {
-      position: absolute;
-      top: 100%; left: 0; right: 0;
-      background: var(--cream);
-      flex-direction: column;
-      padding: 2rem;
-      gap: 1.5rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-links.open { max-height: 500px; }
-  }
+/* section head */
+.sec{padding:100px 0}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-head h2{font-size:44px;color:var(--olive);margin-top:14px}
 
-  /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 8rem 2rem 4rem;
-    background: radial-gradient(ellipse at center top, var(--cream-soft) 0%, var(--cream) 60%, var(--beige) 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at 20% 80%, rgba(201, 168, 118, 0.08) 0%, transparent 40%),
-                      radial-gradient(circle at 80% 20%, rgba(201, 168, 118, 0.06) 0%, transparent 40%);
-    pointer-events: none;
-  }
-  .hero-inner { position: relative; z-index: 1; max-width: 900px; }
-  .hero-logo { width: min(560px, 80vw); margin: 0 auto 2.5rem; display: block; }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    font-weight: 300;
-    color: var(--cocoa);
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    letter-spacing: 0.02em;
-  }
-  .hero h1 em { color: var(--gold); font-style: italic; }
-  .hero-sub {
-    font-size: 1rem;
-    color: var(--cocoa-soft);
-    max-width: 580px;
-    margin: 0 auto 2.5rem;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-  }
-  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn {
-    display: inline-block;
-    padding: 1.1rem 2.4rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    border-radius: 2px;
-  }
-  .btn-primary { background: var(--espresso); color: var(--cream); }
-  .btn-primary:hover { background: var(--cocoa); color: var(--cream-soft); transform: translateY(-2px); }
-  .btn-outline { background: transparent; color: var(--espresso); border-color: var(--espresso); }
-  .btn-outline:hover { background: var(--espresso); color: var(--cream); }
+/* care cards (3 stages) */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.care-card{background:var(--cream2);border:1px solid rgba(74,59,42,.09);border-radius:14px;overflow:hidden}
+.care-card .ph{height:200px;overflow:hidden}
+.care-card .ph img{width:100%;height:100%;object-fit:cover}
+.care-card .body{padding:32px 30px}
+.care-card .stage{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.care-card .stage .no{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);line-height:1}
+.care-card h3{font-size:24px;color:var(--espresso);margin-bottom:12px}
+.care-card p{font-size:14.5px;line-height:1.7;color:var(--text);margin-bottom:20px}
 
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--cocoa-soft);
-    writing-mode: vertical-rl;
-    opacity: 0.7;
-  }
-  .scroll-indicator::after { content: ""; display: block; width: 1px; height: 32px; background: var(--gold); margin: 0.8rem auto 0; }
+/* services (detailed) */
+.services{background:var(--cream2);border-top:1px solid rgba(74,59,42,.08)}
+.svc-group+.svc-group{margin-top:64px}
+.svc-group>.gtitle{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.svc-group>.gtitle h3{font-size:30px;color:var(--espresso)}
+.svc-group>.gtitle .line{flex:1;height:1px;background:rgba(176,141,87,.4)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--page);border:1px solid rgba(74,59,42,.09);border-radius:12px;padding:26px 26px}
+.svc .no{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;margin-bottom:8px}
+.svc h4{font-family:'Playfair Display',serif;font-weight:500;font-size:20px;color:var(--espresso);margin-bottom:10px}
+.svc p{font-size:14px;line-height:1.65;color:var(--text)}
 
-  /* ===== SECTIONS ===== */
-  section { padding: 7rem 0; position: relative; }
-  .section-eyebrow {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.32em;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 1.2rem;
-    font-weight: 500;
-  }
-  .section-title {
-    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-    text-align: center;
-    margin-bottom: 1.2rem;
-    font-weight: 300;
-  }
-  .section-title em { font-style: italic; color: var(--gold); }
-  .section-intro {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 4rem;
-    color: var(--cocoa);
-    font-size: 1.05rem;
-    font-weight: 300;
-  }
-  .divider {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 3.5rem;
-    position: relative;
-  }
-  .divider::before, .divider::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    border-radius: 50%;
-    transform: translateY(-50%);
-  }
-  .divider::before { left: -10px; }
-  .divider::after { right: -10px; }
+/* founders */
+.founders{background:var(--sand);border-top:1px solid rgba(74,59,42,.08)}
+.founders .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;align-items:stretch;max-width:1240px;margin:0 auto;padding:0 40px}
+.founders .photo{position:relative;min-height:520px;border-radius:12px;overflow:hidden;margin:56px 0}
+.founders .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.founders .copy{padding:80px 0 80px 72px;display:flex;flex-direction:column;justify-content:center}
+.founders h2{font-size:40px;color:var(--espresso);margin:22px 0 8px}
+.founders .role{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--olive);margin-bottom:24px}
+.founders p{font-size:16px;line-height:1.8;color:var(--text);max-width:52ch;margin-bottom:18px}
 
-  /* ===== PHILOSOPHY ===== */
-  .philosophy {
-    background: var(--cream-soft);
-    text-align: center;
-  }
-  .philosophy-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.7rem, 3.5vw, 2.5rem);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.4;
-    color: var(--espresso);
-    max-width: 800px;
-    margin: 0 auto 2.5rem;
-  }
-  .philosophy-quote em { color: var(--gold); font-style: italic; }
-  .philosophy-attribution {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.32em;
-    color: var(--cocoa-soft);
-  }
+/* testimonials */
+.testi{background:var(--olive);color:#F7EFDE}
+.testi .sec-head h2{color:#F7EFDE;max-width:20ch;margin-inline:auto}
+.testi .eyebrow{color:var(--gold-light)}
+.testi .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tcard{background:rgba(249,241,235,.08);border:1px solid rgba(247,239,222,.18);border-radius:14px;padding:34px 30px}
+.tcard .q{font-family:'Playfair Display',serif;font-size:44px;line-height:0;color:var(--gold);height:22px}
+.tcard p{font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5;color:#F7EFDE;margin:0 0 22px}
+.tcard .by{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:500}
 
-  /* ===== SERVICES ===== */
-  .services { background: var(--cream); }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-  .service-card {
-    background: var(--cream-soft);
-    padding: 2.8rem 2.2rem;
-    border: 1px solid var(--line);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
-  }
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
-    background: #fff;
-  }
-  .service-card:hover::before { transform: scaleX(1); }
+/* surgeons */
+.surgeons{background:var(--espresso);color:var(--panel);text-align:center}
+.surgeons .inner{max-width:1000px;margin:0 auto;padding:90px 40px}
+.surgeons h2{font-size:40px;color:#F7EFDE;margin:22px 0 24px;line-height:1.2}
+.surgeons p{font-size:17px;line-height:1.8;color:#d9cdb6;max-width:62ch;margin:0 auto 36px}
 
-  .service-icon {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 1.2rem;
-    color: var(--gold);
-  }
-  .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    font-weight: 500;
-  }
-  .service-card p {
-    font-size: 0.92rem;
-    color: var(--cocoa);
-    line-height: 1.7;
-    font-weight: 300;
-  }
+/* contact */
+.contact{max-width:1000px;margin:0 auto;text-align:center;padding:100px 40px}
+.contact h2{font-size:52px;color:var(--espresso);margin:26px 0 20px;line-height:1.1}
+.contact>p{font-size:17px;line-height:1.75;color:var(--text);max-width:52ch;margin:0 auto 36px}
+.contact .info{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:34px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--muted)}
+.form-wrap{max-width:640px;margin:56px auto 0;text-align:left;background:var(--cream2);border:1px solid rgba(74,59,42,.1);border-radius:16px;padding:40px}
+.form-wrap h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--espresso);margin-bottom:6px}
+.form-wrap .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--olive);margin-bottom:26px}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;font-family:'Inter',sans-serif;font-size:15px;color:var(--espresso);background:#fff;border:1px solid rgba(74,59,42,.18);border-radius:9px;padding:12px 14px;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--olive)}
+.field textarea{min-height:110px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#formmsg{font-family:'Inter',sans-serif;font-size:14px;margin-top:14px}
 
-  /* Aesthetics dark band */
-  .aesthetics {
-    background: var(--espresso);
-    color: var(--cream);
-  }
-  .aesthetics .section-title { color: var(--cream); }
-  .aesthetics .section-title em { color: var(--gold); }
-  .aesthetics .section-eyebrow { color: var(--gold); }
-  .aesthetics .section-intro { color: var(--gold-pale); }
-  .aesthetics .divider { background: var(--gold); }
-  .aesthetics .service-card {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(201, 168, 118, 0.2);
-  }
-  .aesthetics .service-card:hover { background: rgba(255, 255, 255, 0.08); }
-  .aesthetics .service-card h3 { color: var(--cream); }
-  .aesthetics .service-card p { color: var(--gold-pale); }
+/* footer */
+.footer{background:var(--espresso);color:#c9bda3}
+.footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;align-items:start;padding-top:64px;padding-bottom:36px}
+.footer .brand{font-family:'Playfair Display',serif;font-weight:500;font-size:30px;letter-spacing:.2em;color:var(--ivory)}
+.footer .rule{display:flex;align-items:center;gap:12px;margin:8px 0 4px}
+.footer .rule .cap{width:34px;height:1px;background:var(--gold)}
+.footer .rule .txt{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.footer .rule .flex{flex:1;height:1px;background:rgba(176,141,87,.4)}
+.footer p.desc{font-size:14px;line-height:1.7;color:#c9bda3;max-width:34ch;margin-top:14px}
+.footer .col-h{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
+.footer .col a,.footer .col span{display:block;font-family:'Inter',sans-serif;font-size:14px;color:#d9cdb6;margin-bottom:12px}
+.footer .col a:hover{color:var(--ivory)}
+.footer .copy{border-top:1px solid rgba(201,189,163,.2);padding:22px 0;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.1em;color:#a2957f;text-align:center}
 
-  /* ===== FOUNDERS ===== */
-  .founders { background: var(--beige); }
-  .founders-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 3rem;
-    margin-top: 4rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .founder-card {
-    background: var(--cream-soft);
-    padding: 3rem 2.5rem;
-    text-align: center;
-    border: 1px solid var(--line);
-    position: relative;
-  }
-  .founder-portrait {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 1.8rem;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    padding: 6px;
-    background: var(--cream);
-    box-shadow: 0 0 0 1px var(--gold), 0 20px 40px -20px rgba(61, 36, 24, 0.25);
-  }
-  .founder-portrait::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 1px rgba(201, 168, 118, 0.4);
-    pointer-events: none;
-  }
-  .founder-portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    border-radius: 50%;
-    display: block;
-    filter: saturate(0.95);
-  }
-  .founder-card h3 {
-    font-size: 1.7rem;
-    margin-bottom: 0.3rem;
-    font-weight: 500;
-  }
-  .founder-credentials {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.28em;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-  .founder-card p {
-    color: var(--cocoa);
-    font-size: 0.93rem;
-    line-height: 1.75;
-  }
-
-  /* ===== TESTIMONIAL CAROUSEL ===== */
-  .testimonial {
-    background: var(--cream-soft);
-    text-align: center;
-    padding: 8rem 2rem;
-  }
-  .testimonial-eyebrow {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.32em;
-    color: var(--gold);
-    margin-bottom: 2.5rem;
-    font-weight: 500;
-  }
-  .testimonial-carousel {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .testimonial-viewport {
-    overflow: hidden;
-    padding: 0 5rem;
-  }
-  .testimonial-track {
-    display: flex;
-    transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
-    will-change: transform;
-  }
-  .testimonial-slide {
-    flex: 0 0 100%;
-    padding: 0 1rem;
-    box-sizing: border-box;
-  }
-  .stars {
-    color: var(--gold);
-    font-size: 1rem;
-    letter-spacing: 0.4em;
-    margin-bottom: 2rem;
-  }
-  .testimonial-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.4rem, 2.8vw, 2rem);
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.5;
-    color: var(--espresso);
-    max-width: 820px;
-    margin: 0 auto 2rem;
-    position: relative;
-    min-height: 12rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .testimonial-quote::before {
-    content: "\201C";
-    color: var(--gold);
-    font-size: 3rem;
-    line-height: 0;
-    vertical-align: -0.4em;
-    margin-right: 0.1em;
-  }
-  .testimonial-quote::after {
-    content: "\201D";
-    color: var(--gold);
-    font-size: 3rem;
-    line-height: 0;
-    vertical-align: -0.4em;
-    margin-left: 0.1em;
-  }
-  .testimonial-author {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.32em;
-    color: var(--cocoa-soft);
-  }
-
-  /* Arrow buttons */
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--cocoa);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-    z-index: 2;
-  }
-  .carousel-arrow:hover {
-    background: var(--espresso);
-    border-color: var(--espresso);
-    color: var(--cream);
-    transform: translateY(-50%) scale(1.05);
-  }
-  .carousel-arrow:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 4px;
-  }
-  .carousel-arrow svg { width: 18px; height: 18px; }
-  .carousel-arrow.prev { left: 0; }
-  .carousel-arrow.next { right: 0; }
-
-  /* Dot indicators */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-top: 3rem;
-  }
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid var(--gold);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-  }
-  .carousel-dot:hover { background: var(--gold-pale); }
-  .carousel-dot.active {
-    background: var(--gold);
-    transform: scale(1.2);
-  }
-
-  @media (max-width: 720px) {
-    .testimonial { padding: 5rem 1.4rem; }
-    .testimonial-viewport { padding: 0 0.5rem; }
-    .carousel-arrow {
-      width: 44px;
-      height: 44px;
-      top: auto;
-      bottom: -5.5rem;
-      transform: none;
-    }
-    .carousel-arrow:hover { transform: scale(1.05); }
-    .carousel-arrow.prev { left: calc(50% - 60px); }
-    .carousel-arrow.next { right: calc(50% - 60px); }
-    .carousel-dots { margin-top: 2rem; margin-bottom: 4rem; }
-    .testimonial-quote { min-height: 14rem; }
-  }
-
-  /* ===== CONTACT ===== */
-  .contact { background: var(--cream); }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 3rem;
-    align-items: start;
-  }
-  @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
-
-  .contact-info { padding-top: 0.5rem; }
-  .contact-block { margin-bottom: 2.2rem; }
-  .contact-label {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-    font-weight: 500;
-  }
-  .contact-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    color: var(--espresso);
-    font-weight: 400;
-    line-height: 1.4;
-  }
-  .contact-value a { color: var(--espresso); }
-  .contact-value a:hover { color: var(--gold); }
-  .contact-secondary {
-    font-size: 0.92rem;
-    color: var(--cocoa);
-    margin-top: 0.3rem;
-  }
-
-  .contact-form {
-    background: var(--cream-soft);
-    padding: 3rem;
-    border: 1px solid var(--line);
-  }
-  .contact-form h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.4rem;
-    font-weight: 500;
-  }
-  .contact-form .form-sub {
-    font-size: 0.88rem;
-    color: var(--cocoa);
-    margin-bottom: 2rem;
-  }
-  .form-group { margin-bottom: 1.3rem; }
-  .form-group label {
-    display: block;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    color: var(--cocoa-soft);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    background: transparent;
-    border: 1px solid var(--line);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.92rem;
-    color: var(--espresso);
-    transition: all 0.3s ease;
-    border-radius: 0;
-  }
-  .form-group textarea { resize: vertical; min-height: 100px; }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: var(--cream);
-  }
-  .contact-form .btn { width: 100%; margin-top: 0.5rem; }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--espresso);
-    color: var(--gold-pale);
-    padding: 5rem 0 2rem;
-    text-align: center;
-  }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: var(--cream);
-    letter-spacing: 0.18em;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-  }
-  .footer-tagline {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    margin-bottom: 3rem;
-  }
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    list-style: none;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-  }
-  .footer-links a {
-    color: var(--gold-pale);
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-  }
-  .footer-links a:hover { color: var(--gold); }
-  .footer-divider {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 2rem;
-    opacity: 0.5;
-  }
-  .footer-bottom {
-    font-size: 0.75rem;
-    color: var(--gold-pale);
-    opacity: 0.7;
-    line-height: 1.8;
-  }
-  .footer-bottom a { color: var(--gold); }
-
-  /* ===== SCROLL ANIMATIONS ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 600px) {
-    .container, .narrow { padding: 0 1.4rem; }
-    section { padding: 5rem 0; }
-    .testimonial { padding: 5rem 1.4rem; }
-    .contact-form { padding: 2rem 1.5rem; }
-    .hero { padding: 7rem 1.5rem 3rem; }
-  }
+/* ---------- responsive ---------- */
+@media(max-width:960px){
+ .founders .grid{grid-template-columns:1fr}
+ .founders .photo{min-height:420px;margin:40px 0 0}
+ .founders .copy{padding:48px 0 56px}
+ .trust .container{grid-template-columns:repeat(2,1fr);gap:26px}
+ .cards3,.svc-grid,.testi .grid,.footer .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .container,.hero,.hero-band,.who,.surgeons .inner,.contact{padding-left:22px;padding-right:22px}
+ .nav .links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid rgba(74,59,42,.1)}
+ .nav .links.open{display:flex}
+ .nav .links a{padding:14px 40px;width:100%}
+ .nav .book{display:none}
+ #navtoggle{display:flex}
+ .hero{padding:56px 22px 52px}
+ .hero .kicker{font-size:21px}
+ .hero p{font-size:16px}
+ .sec{padding:66px 0}
+ .sec-head h2{font-size:32px}
+ .who .statement{font-size:26px}
+ .cards3,.svc-grid,.testi .grid,.footer .grid,.form-row,.trust .container{grid-template-columns:1fr}
+ .contact h2{font-size:38px}
+ .founders h2{font-size:32px}
+ .hero-band .frame{height:280px}
+ .form-wrap{padding:28px 22px}
+ .footer .grid{gap:30px}
+}
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav>
-  <div class="nav-inner">
-    <a href="#home" class="nav-logo">ALMANA<span>Recovery & Aesthetics</span></a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="#philosophy">Philosophy</a></li>
-      <li><a href="#recovery">Recovery</a></li>
-      <li><a href="#aesthetics">Aesthetics</a></li>
-      <li><a href="#founders">Our Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="https://app.acuityscheduling.com/schedule.php?owner=39722717" target="_blank" rel="noopener" class="nav-cta">Book a Consultation</a></li>
-    </ul>
+<!-- ============ UTILITY BAR ============ -->
+<div class="topbar">
+  <div class="container">
+    <div class="grp">
+      <!-- PHONE: 703.597.4866 (from live site) — swap to new shared number when set -->
+      <a href="tel:+17035974866"><span class="diamond">&#9670;</span>703.597.4866</a>
+      <!-- WHATSAPP_URL placeholder -->
+      <a href="#" style="color:var(--sage-light)" title="WhatsApp — coming soon">WhatsApp</a>
+    </div>
+    <div class="grp">
+      <span>info@almanarecovery.com</span>
+      <span style="opacity:.4">|</span>
+      <!-- PAYMENT_URL placeholder: Existing Patients -> payment portal -->
+      <a class="pill-ghost" href="#" title="Existing patient payments — portal coming soon">Existing Patients</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="container">
+    <a href="#home"><img src="assets/logo.png" alt="Almana Recovery &amp; Aesthetics"></a>
+    <div class="links" id="navlinks">
+      <a href="#services">Services</a>
+      <a href="#care">Our Care</a>
+      <a href="#founders">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <!-- BOOKING_URL (Acuity) -->
+    <a class="btn btn-olive book" href="https://app.acuityscheduling.com/schedule.php?owner=39722717">Book a Consultation</a>
+    <button id="navtoggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section id="home" class="hero">
-  <div class="hero-inner">
-    <svg class="hero-logo" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" aria-label="Almana Recovery and Aesthetics">
-      <path d="M 100 95 Q 300 5 500 95" stroke="#C9A876" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.95"/>
-      <text x="300" y="180" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="94" font-weight="500" fill="#3D2418" letter-spacing="6">ALMANA</text>
-      <text x="300" y="225" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="18" font-weight="400" fill="#C9A876" letter-spacing="7.5">RECOVERY &amp; AESTHETICS</text>
-    </svg>
-    <h1>Heal beautifully. <em>Recover with dignity.</em></h1>
-    <p class="hero-sub">Concierge post-surgical recovery and luxury aesthetic care in Northern Virginia &mdash; for women who deserve the same care in healing as they did in their transformation.</p>
-    <div class="hero-actions">
-      <a href="https://app.acuityscheduling.com/schedule.php?owner=39722717" target="_blank" rel="noopener" class="btn btn-primary">Book a Consultation</a>
-      <a href="#recovery" class="btn btn-outline">Explore Services</a>
-    </div>
+<!-- ============ HERO ============ -->
+<header id="home" class="hero">
+  <img class="logo" src="assets/logo.png" alt="Almana Recovery &amp; Aesthetics logo">
+  <div class="kicker">Luxury Recovery Backed by Clinical Expertise</div>
+  <p>Private, nurse-led post-surgical care designed to provide comfort, safety, and peace of mind throughout every stage of your recovery.</p>
+  <div class="hero-actions">
+    <a class="btn btn-olive" href="https://app.acuityscheduling.com/schedule.php?owner=39722717">Book a Consultation &rarr;</a>
+    <a class="textlink" style="color:var(--espresso);border-color:var(--gold)" href="#care">How we care</a>
   </div>
-  <div class="scroll-indicator">Scroll</div>
+</header>
+<div class="hero-band">
+  <div class="frame"><img src="assets/recovery-suite.jpg" alt="A luxurious private recovery suite"></div>
+</div>
+
+<!-- ============ WHO WE ARE ============ -->
+<section id="care" class="who">
+  <div class="eyebrow">Who we are</div>
+  <p class="statement">Backed by more than 25 years of nursing experience, Almana brings clinical expertise and quiet luxury to every stage of your post-surgical recovery.</p>
+  <p class="body">Our registered nurses monitor your healing closely, manage comfort and medication, and coordinate every detail — so you can simply rest, protect your results, and recover with confidence.</p>
 </section>
 
-<!-- ===== PHILOSOPHY ===== -->
-<section id="philosophy" class="philosophy">
-  <div class="narrow reveal">
-    <div class="section-eyebrow">Our Philosophy</div>
-    <p class="philosophy-quote">We are more than nurses &mdash; we are <em>your healing team.</em> Our hands heal, our words empower, and our presence comforts every step of your recovery.</p>
-    <div class="philosophy-attribution">— Ana &amp; Alma, Founders</div>
-  </div>
-</section>
-
-<!-- ===== RECOVERY SERVICES ===== -->
-<section id="recovery" class="services">
-  <div class="container reveal">
-    <div class="section-eyebrow">Concierge Post-Surgical Care</div>
-    <h2 class="section-title">Recovery, <em>Reimagined</em></h2>
-    <div class="divider"></div>
-    <p class="section-intro">From the moment you leave the surgical center to the day you return to your fullest self, we are with you. Discreet, attentive, and uncompromising in care.</p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M3 13h2l2-7h10l2 7h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-        <h3>Private Transportation</h3>
-        <p>Safe, discreet transportation from the surgical center to your home or hotel — a calm, comfortable transition after your procedure.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <h3>Overnight Care</h3>
-        <p>Compassionate, professional overnight nursing to monitor and assist you through the most critical first hours of recovery.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-        <h3>Wellness Checks</h3>
-        <p>Personalized in-person visits to evaluate healing progression, manage discomfort, and adjust your care plan as you recover.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <h3>Wound Care</h3>
-        <p>Professional wound care provided in-office or in the comfort of your home, following your surgeon's post-operative protocol exactly.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <h3>Lymphatic Drainage Massage</h3>
-        <p>Gentle, specialized massage therapy to reduce swelling, promote circulation, and accelerate every stage of your recovery.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M9 11H5a2 2 0 0 0-2 2v7h18v-7a2 2 0 0 0-2-2h-4"/><path d="M9 11V7a3 3 0 0 1 6 0v4"/></svg>
-        <h3>Drain Removal</h3>
-        <p>Sterile, gentle drain removal performed precisely to your surgeon's guidelines — comfortable, safe, and reassuring.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== AESTHETICS SERVICES ===== -->
-<section id="aesthetics" class="services aesthetics">
-  <div class="container reveal">
-    <div class="section-eyebrow">In-Office Aesthetics</div>
-    <h2 class="section-title">The Art of <em>Glow</em></h2>
-    <div class="divider"></div>
-    <p class="section-intro">Treatments that pair clinical precision with the slow, sensory ritual of feeling truly cared for.</p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <h3>HydraFacial</h3>
-        <p>Deep cleansing, exfoliation, and hydration that leaves the skin immediately luminous, balanced, and refreshed.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M12 2v20M4 12h16"/><circle cx="12" cy="12" r="9"/></svg>
-        <h3>PRP Injections — Hair & Face</h3>
-        <p>Naturally rejuvenate the skin and stimulate hair growth using your body's own platelet-rich plasma.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <h3>CO₂ Laser Resurfacing</h3>
-        <p>Refine fine lines, sun damage, and acne scars with precision laser resurfacing that reveals smoother, fresher skin.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
-        <h3>BBL Photofacial</h3>
-        <p>Reverse signs of aging, diminish pigmentation, and refine your skin tone with BroadBand Light therapy.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-        <h3>Ultrasound Therapy</h3>
-        <p>Targeted ultrasound treatment to soften scar tissue, reduce post-surgical swelling, and support deeper healing.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg>
-        <h3>Maderotherapy</h3>
-        <p>The art of wood therapy — sculpting contours and stimulating lymphatic drainage with hand-carved wooden tools.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M2 12h2M20 12h2M12 2v2M12 20v2"/><circle cx="12" cy="12" r="6"/></svg>
-        <h3>Cavitation Therapy</h3>
-        <p>Non-invasive ultrasonic cavitation that targets stubborn, localized fat deposits with no downtime.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-12a8 8 0 0 1 16 0c0 7.5-8 12-8 12z"/><circle cx="12" cy="10" r="3"/></svg>
-        <h3>Vaginal Rejuvenation</h3>
-        <p>Discreet, non-surgical feminine wellness treatments designed to restore comfort and confidence.</p>
-      </div>
-      <div class="service-card">
-        <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6"/></svg>
-        <h3>Skin Tag Removal</h3>
-        <p>Safe, gentle skin tag removal for a smoother, more even complexion — performed in-office in minutes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOUNDERS ===== -->
-<section id="founders" class="founders">
-  <div class="container reveal">
-    <div class="section-eyebrow">Meet The Founders</div>
-    <h2 class="section-title">The Hands Behind <em>Almana</em></h2>
-    <div class="divider"></div>
-    <p class="section-intro">With more than 25 years of combined experience, Analia and Alma built Almana on a single idea: that recovery should feel as cared-for as the procedure itself.</p>
-
-    <div class="founders-grid">
-      <div class="founder-card">
-        <div class="founder-portrait"><img src="ana.jpg" alt="Analia Leites, RN — Co-Founder of Almana Recovery & Aesthetics"></div>
-        <h3>Analia Leites</h3>
-        <span class="founder-credentials">Registered Nurse · Co-Founder</span>
-        <p>A registered nurse devoted to compassionate, high-quality patient care. Analia brings warmth, precision, and a deep belief in continuous improvement to every recovery she supports.</p>
-      </div>
-      <div class="founder-card">
-        <div class="founder-portrait"><img src="alma.jpg" alt="Alma Hernandez, RN — Co-Founder of Almana Recovery & Aesthetics"></div>
-        <h3>Alma Hernandez</h3>
-        <span class="founder-credentials">Registered Nurse · Co-Founder</span>
-        <p>A registered nurse committed to exceptional, empathetic care. Alma's calm presence and clinical expertise make every client feel safe, seen, and well looked-after.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIAL CAROUSEL ===== -->
-<section class="testimonial">
-  <div class="reveal">
-    <div class="testimonial-eyebrow">What Our Clients Say</div>
-    <div class="testimonial-carousel" id="carousel">
-      <div class="testimonial-viewport">
-        <div class="testimonial-track">
-
-          <div class="testimonial-slide">
-            <div class="stars">★ ★ ★ ★ ★</div>
-            <p class="testimonial-quote">I honestly don't know how I would've gotten through recovery without Ana and Alma. From day one, they made me feel safe and cared for. Every visit felt like being wrapped in comfort. If you're having surgery — these are the women you want by your side.</p>
-            <div class="testimonial-author">— Jessica J.</div>
-          </div>
-
-          <div class="testimonial-slide">
-            <div class="stars">★ ★ ★ ★ ★</div>
-            <p class="testimonial-quote">The level of care I received was beyond anything I expected. Ana and Alma treated me like family, and their lymphatic massages made all the difference in my recovery. I cannot recommend them enough — they are truly the best in the business.</p>
-            <div class="testimonial-author">— Maria R.</div>
-          </div>
-
-          <div class="testimonial-slide">
-            <div class="stars">★ ★ ★ ★ ★</div>
-            <p class="testimonial-quote">From the airport pickup to the overnight care to the follow-up visits, everything was handled with such grace and professionalism. They thought of every detail. I felt truly cared for in a way I have never experienced from medical professionals before.</p>
-            <div class="testimonial-author">— Sofia M.</div>
-          </div>
-
-        </div>
-      </div>
-
-      <button class="carousel-arrow prev" aria-label="Previous testimonial">
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      </button>
-      <button class="carousel-arrow next" aria-label="Next testimonial">
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-      </button>
-
-      <div class="carousel-dots" role="tablist" aria-label="Choose testimonial"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section id="contact" class="contact">
-  <div class="container reveal">
-    <div class="section-eyebrow">Get In Touch</div>
-    <h2 class="section-title">Begin Your <em>Recovery Ritual</em></h2>
-    <div class="divider"></div>
-    <p class="section-intro">Tell us about your procedure and your timeline. We'll respond personally to design your concierge recovery plan.</p>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-block">
-          <div class="contact-label">Visit Us</div>
-          <div class="contact-value">6559 Edsall Road<br>Springfield, Virginia</div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-label">Call</div>
-          <div class="contact-value"><a href="tel:+17035974866">703.597.4866</a></div>
-          <div class="contact-secondary"><a href="tel:+15712745521">+1 (571) 274-5521</a></div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:info@almanarecovery.com">info@almanarecovery.com</a></div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-label">Hours</div>
-          <div class="contact-value">Monday – Friday<br>By Appointment</div>
-          <div class="contact-secondary">Concierge & overnight care available 24/7</div>
-        </div>
-      </div>
-
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you. We will be in touch shortly to discuss your care.'); this.reset();">
-        <h3>Request a Consultation</h3>
-        <p class="form-sub">Discreet. Personal. Always confidential.</p>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="form-group">
-          <label for="service">Interested In</label>
-          <select id="service" name="service">
-            <option>Post-Surgical Recovery</option>
-            <option>Lymphatic Drainage Massage</option>
-            <option>Aesthetic Treatments</option>
-            <option>Overnight Care</option>
-            <option>I'm not sure yet</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Tell us about your needs</label>
-          <textarea id="message" name="message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Inquiry</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer>
+<!-- ============ TRUST ROW ============ -->
+<div class="trust">
   <div class="container">
-    <div class="footer-logo">ALMANA</div>
-    <div class="footer-tagline">Recovery & Aesthetics</div>
-    <ul class="footer-links">
-      <li><a href="#philosophy">Philosophy</a></li>
-      <li><a href="#recovery">Recovery</a></li>
-      <li><a href="#aesthetics">Aesthetics</a></li>
-      <li><a href="#founders">Our Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="footer-divider"></div>
-    <p class="footer-bottom">
-      6559 Edsall Road · Springfield, Virginia · <a href="tel:+17035974866">703.597.4866</a><br>
-      &copy; <span id="year"></span> Almana Recovery &amp; Aesthetics. All rights reserved.
-    </p>
+    <div><div class="num">RN-Led</div><div class="label">Licensed registered nurses</div></div>
+    <div><div class="num">24 / 7</div><div class="label">Overnight care available</div></div>
+    <div><div class="num">Discreet</div><div class="label">Private &amp; confidential</div></div>
+    <div><div class="num">Aligned</div><div class="label">Follows surgeon protocols</div></div>
   </div>
+</div>
+
+<!-- ============ OUR CARE (3 stages) ============ -->
+<section class="sec"><div class="container">
+  <div class="sec-head">
+    <div class="eyebrow">How we care</div>
+    <h2>Care for every stage of your recovery</h2>
+  </div>
+  <div class="cards3">
+    <article class="care-card">
+      <div class="ph"><img src="assets/care-1.jpg" alt="A nurse attending to a comfortable patient during recovery" loading="lazy"></div>
+      <div class="body">
+        <div class="stage"><span class="no">01</span><span class="label">First 24 to 72 Hours</span></div>
+        <h3>Immediately After Surgery</h3>
+        <p>Around-the-clock nursing through your first days home, with expert medication and wound care management, plus attentive monitoring to keep your recovery safely on track.</p>
+        <a class="textlink" href="#contact">Learn more</a>
+      </div>
+    </article>
+    <article class="care-card">
+      <div class="ph"><img src="assets/care-2.jpg" alt="A nurse providing gentle wound and recovery care" loading="lazy"></div>
+      <div class="body">
+        <div class="stage"><span class="no">02</span><span class="label">The Healing Weeks</span></div>
+        <h3>During Your Recovery</h3>
+        <p>As you heal at home or in a hotel, wellness visits bring wound and drain care, lymphatic massage, shower assistance, patient education, and compression garment management.</p>
+        <a class="textlink" href="#contact">Learn more</a>
+      </div>
+    </article>
+    <article class="care-card">
+      <div class="ph"><img src="assets/care-3.jpg" alt="Calm wellness and self-care essentials" loading="lazy"></div>
+      <div class="body">
+        <div class="stage"><span class="no">03</span><span class="label">Beyond Recovery</span></div>
+        <h3>Ongoing Wellness</h3>
+        <p>Continued care on your terms, in-office or in-home, with lymphatic massage, scar and skin care, and gentle guidance to help you look and feel your very best.</p>
+        <a class="textlink" href="#contact">Learn more</a>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ SERVICES (detailed — from original site) ============ -->
+<section id="services" class="services sec"><div class="container">
+  <div class="sec-head">
+    <div class="eyebrow">What we offer</div>
+    <h2>Our Services</h2>
+  </div>
+
+  <div class="svc-group">
+    <div class="gtitle"><h3>Recovery, Reimagined</h3><span class="line"></span></div>
+    <div class="svc-grid">
+      <div class="svc"><div class="no">01</div><h4>Private Transportation</h4><p>Safe, discreet transportation from the surgical center to your home or hotel — a calm, comfortable transition after your procedure.</p></div>
+      <div class="svc"><div class="no">02</div><h4>Overnight Care</h4><p>Compassionate, professional overnight nursing to monitor and assist you through the most critical first hours of recovery.</p></div>
+      <div class="svc"><div class="no">03</div><h4>Wellness Checks</h4><p>Personalized in-person visits to evaluate healing progression, manage discomfort, and adjust your care plan as you recover.</p></div>
+      <div class="svc"><div class="no">04</div><h4>Wound Care</h4><p>Professional wound care provided in-office or in the comfort of your home, following your surgeon's post-operative protocol exactly.</p></div>
+      <div class="svc"><div class="no">05</div><h4>Lymphatic Drainage Massage</h4><p>Gentle, specialized massage therapy to reduce swelling, promote circulation, and accelerate every stage of your recovery.</p></div>
+      <div class="svc"><div class="no">06</div><h4>Drain Removal</h4><p>Sterile, gentle drain removal performed precisely to your surgeon's guidelines — comfortable, safe, and reassuring.</p></div>
+    </div>
+  </div>
+
+</div></section>
+
+<!-- ============ FOUNDERS ============ -->
+<section id="founders" class="founders">
+  <div class="grid">
+    <div class="photo"><img src="assets/founders.jpg" alt="Ana &amp; Alma, founding registered nurses of Almana Recovery &amp; Aesthetics" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow">Meet the founders</div>
+      <h2>Ana &amp; Alma</h2>
+      <div class="role">Registered Nurses &middot; Founders</div>
+      <p>Almana was born from years inside the surgical and critical-care world — and a belief that recovery deserves the same expertise and grace as the procedure itself.</p>
+      <p>We understand the patient experience intimately, and we show up, every time, with the tools, calm, and clinical judgment to help you heal safely and beautifully.</p>
+      <a class="btn btn-outline" style="align-self:flex-start" href="#contact">Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<div class="testi"><div class="container" style="padding-top:96px;padding-bottom:96px">
+  <div class="sec-head">
+    <div class="eyebrow">Kind words</div>
+    <h2>Trusted by patients, recommended by surgeons</h2>
+  </div>
+  <div class="grid">
+    <div class="tcard"><div class="q">&ldquo;</div><p>From the day of surgery, someone was always there. I never felt alone or unsure. I could simply rest and let myself heal.</p><div class="by">Recovery client &middot; Fairfax</div></div>
+    <div class="tcard"><div class="q">&ldquo;</div><p>Almana follows my post-operative protocols exactly. My patients are safer, calmer, and their results are protected.</p><div class="by">Board-Certified Plastic Surgeon</div></div>
+    <div class="tcard"><div class="q">&ldquo;</div><p>Everything was ready before I got home: my space, my medications, my questions answered. Truly seamless care.</p><div class="by">Post-Op client &middot; Arlington</div></div>
+  </div>
+</div></div>
+
+<!-- ============ NOTE TO SURGEONS ============ -->
+<div class="surgeons"><div class="inner">
+  <div class="eyebrow">A note to surgeons</div>
+  <h2>A trusted extension of your practice</h2>
+  <p>We work seamlessly alongside your team to uphold your post-operative protocols with precision — the bridge between your surgical expertise and the recovery your patients deserve.</p>
+  <a class="btn btn-gold" href="#contact">Partner with Almana &rarr;</a>
+</div></div>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <svg width="72" height="30" viewBox="0 0 72 30" aria-hidden="true" style="margin:0 auto 6px">
+    <path d="M8 15 C 26 15, 46 15, 64 15" fill="none" stroke="#8A9A7B" stroke-width="1.1" stroke-linecap="round"></path>
+    <g fill="#8A9A7B">
+      <ellipse cx="24" cy="10" rx="5" ry="2" transform="rotate(-24 24 10)"></ellipse>
+      <ellipse cx="36" cy="9" rx="5" ry="2" transform="rotate(-24 36 9)"></ellipse>
+      <ellipse cx="48" cy="10" rx="5" ry="2" transform="rotate(-24 48 10)"></ellipse>
+      <ellipse cx="30" cy="20" rx="5" ry="2" transform="rotate(24 30 20)"></ellipse>
+      <ellipse cx="42" cy="21" rx="5" ry="2" transform="rotate(24 42 21)"></ellipse>
+    </g>
+  </svg>
+  <h2>Begin your recovery with Almana</h2>
+  <p>Tell us about your procedure and timeline, and we'll craft a recovery plan made entirely for you.</p>
+  <a class="btn btn-olive" href="https://app.acuityscheduling.com/schedule.php?owner=39722717">Book a Consultation &rarr;</a>
+  <div class="info">
+    <span>6559 Edsall Rd, Springfield, VA 22151</span><span class="diamond">&#9670;</span>
+    <a href="tel:+17035974866">703.597.4866</a><span class="diamond">&#9670;</span>
+    <span>info@almanarecovery.com</span><span class="diamond">&#9670;</span>
+    <span>By appointment</span>
+  </div>
+
+  <!-- Inquiry form: posts to CONTACT_ENDPOINT (self-hosted almana_webform via Cloudflare Tunnel); mailto fallback -->
+  <div class="form-wrap">
+    <h3>Request a Consultation</h3>
+    <div class="sub">Discreet. Personal. Always confidential.</div>
+    <form id="inquiry">
+      <div class="form-row">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+      </div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="interest">Interested In</label>
+        <select id="interest" name="interest">
+          <option>Post-Surgical Recovery</option>
+          <option>Lymphatic Drainage Massage</option>
+          <option>Aesthetic Treatments</option>
+          <option>Overnight Care</option>
+          <option>I'm not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="message">Tell us about your needs</label><textarea id="message" name="message"></textarea></div>
+      <button class="btn btn-olive" type="submit" style="width:100%;justify-content:center">Send Inquiry</button>
+      <div id="formmsg"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <div class="brand">ALMANA</div>
+        <div class="rule"><span class="cap"></span><span class="txt">Recovery</span><span class="flex"></span></div>
+        <p class="desc">Concierge post-surgical recovery nursing, delivered with warmth and discretion across Northern Virginia.</p>
+      </div>
+      <div class="col">
+        <div class="col-h">Explore</div>
+        <a href="#services">Services</a>
+        <a href="#care">Our Care</a>
+        <a href="#founders">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="col">
+        <div class="col-h">Visit</div>
+        <span>6559 Edsall Road</span>
+        <span>Springfield, Virginia 22151</span>
+        <a href="tel:+17035974866">703.597.4866</a>
+        <span>info@almanarecovery.com</span>
+      </div>
+    </div>
+  </div>
+  <div class="copy">&copy; <span id="yr"></span> Almana Recovery &amp; Aesthetics, LLC &middot; All rights reserved.</div>
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('yr').textContent=new Date().getFullYear();
+// mobile nav
+var t=document.getElementById('navtoggle'),l=document.getElementById('navlinks');
+t.addEventListener('click',function(){l.classList.toggle('open');});
+l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('open');});
 
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Close mobile nav after click
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
-  });
-
-  // ===== TESTIMONIAL CAROUSEL =====
-  (function() {
-    const carousel = document.getElementById('carousel');
-    if (!carousel) return;
-    const track  = carousel.querySelector('.testimonial-track');
-    const slides = carousel.querySelectorAll('.testimonial-slide');
-    const prev   = carousel.querySelector('.carousel-arrow.prev');
-    const next   = carousel.querySelector('.carousel-arrow.next');
-    const dotsEl = carousel.querySelector('.carousel-dots');
-    let idx = 0;
-
-    // Build dots
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      b.setAttribute('aria-label', `Testimonial ${i + 1}`);
-      b.addEventListener('click', () => goTo(i));
-      dotsEl.appendChild(b);
+// inquiry form -> CONTACT_ENDPOINT with graceful mailto fallback
+var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // TODO: confirm Cloudflare Tunnel hostname
+var f=document.getElementById('inquiry'),msg=document.getElementById('formmsg');
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var data={name:name.value,phone:phone.value,email:email.value,interest:interest.value,message:message.value};
+  msg.style.color='#6E7F63';msg.textContent='Sending…';
+  fetch(CONTACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){if(!r.ok)throw 0;return r;})
+    .then(function(){f.reset();msg.style.color='#6E7F63';msg.textContent='Thank you — we’ll be in touch personally, and always confidentially.';})
+    .catch(function(){
+      // fallback: open the visitor's email client pre-filled to info@
+      var body=encodeURIComponent('Name: '+data.name+'\nPhone: '+data.phone+'\nEmail: '+data.email+'\nInterested in: '+data.interest+'\n\n'+data.message);
+      msg.style.color='#8a7f6d';
+      msg.innerHTML='Opening your email app to send securely… If nothing happens, email <a href="mailto:info@almanarecovery.com" style="color:#6E7F63">info@almanarecovery.com</a>.';
+      window.location.href='mailto:info@almanarecovery.com?subject='+encodeURIComponent('Consultation request — '+data.name)+'&body='+body;
     });
-    const dots = dotsEl.querySelectorAll('.carousel-dot');
-
-    function goTo(i) {
-      idx = (i + slides.length) % slides.length;
-      track.style.transform = `translateX(-${idx * 100}%)`;
-      dots.forEach((d, j) => d.classList.toggle('active', j === idx));
-    }
-    prev.addEventListener('click', () => goTo(idx - 1));
-    next.addEventListener('click', () => goTo(idx + 1));
-
-    // Keyboard arrows when carousel area in focus / hover
-    document.addEventListener('keydown', (e) => {
-      const rect = carousel.getBoundingClientRect();
-      const inView = rect.top < window.innerHeight && rect.bottom > 0;
-      if (!inView) return;
-      if (e.key === 'ArrowLeft')  goTo(idx - 1);
-      if (e.key === 'ArrowRight') goTo(idx + 1);
-    });
-
-    // Touch / swipe
-    let startX = 0, isDown = false;
-    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDown = true; }, { passive: true });
-    track.addEventListener('touchend',   e => {
-      if (!isDown) return;
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) goTo(dx < 0 ? idx + 1 : idx - 1);
-      isDown = false;
-    });
-  })();
+});
 </script>
-
 </body>
 </html>
