@@ -538,6 +538,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
     <h3>Solicite una Consulta Gratuita</h3>
     <div class="sub">Discreto. Personal. Siempre confidencial.</div>
     <form id="inquiry">
+      <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
       <div class="form-row">
         <div class="field"><label for="name">Nombre</label><input id="name" name="name" type="text" required></div>
         <div class="field"><label for="phone">Teléfono</label><input id="phone" name="phone" type="tel"></div>
@@ -610,11 +611,11 @@ t.addEventListener('click',function(){l.classList.toggle('open');});
 l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('open');});
 
 // inquiry form -> CONTACT_ENDPOINT with graceful mailto fallback
-var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // TODO: confirm Cloudflare Tunnel hostname
+var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // Cloudflare Worker: see /worker/README.md
 var f=document.getElementById('inquiry'),msg=document.getElementById('formmsg');
 f.addEventListener('submit',function(e){
   e.preventDefault();
-  var data={name:name.value,phone:phone.value,email:email.value,interest:interest.value,message:message.value};
+  var data={name:name.value,phone:phone.value,email:email.value,interest:interest.value,message:message.value,website:f.website.value};
   msg.style.color='#6E7F63';msg.textContent='Enviando…';
   fetch(CONTACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
     .then(function(r){if(!r.ok)throw 0;return r;})
@@ -623,8 +624,7 @@ f.addEventListener('submit',function(e){
       // fallback: open the visitor's email client pre-filled to info@
       var body=encodeURIComponent('Name: '+data.name+'\nPhone: '+data.phone+'\nEmail: '+data.email+'\nInterested in: '+data.interest+'\n\n'+data.message);
       msg.style.color='#8a7f6d';
-      msg.innerHTML='Abriendo su aplicación de correo para enviar de forma segura… Si no ocurre nada, escriba a <a href="mailto:info@almanarecovery.com" style="color:#6E7F63">info@almanarecovery.com</a>.';
-      window.location.href='mailto:info@almanarecovery.com?subject='+encodeURIComponent('Solicitud de consulta gratuita: '+data.name)+'&body='+body;
+      msg.innerHTML='No pudimos enviar el formulario en este momento. Por favor llame o envíe un texto al <a href="tel:+17037558045" style="color:#6E7F63">(703) 755-8045</a>, o <a href="mailto:info@almanarecovery.com?subject='+encodeURIComponent('Solicitud de consulta gratuita: '+data.name)+'&body='+body+'" style="color:#6E7F63">escríbanos</a>.';
     });
 });
 </script>
