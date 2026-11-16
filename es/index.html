@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almana Recovery: Enfermeras Registradas para su Recuperación Postquirúrgica en el Norte de Virginia, DC y Maryland</title>
+<meta name="description" content="Almana Recovery ofrece cuidado de recuperación postquirúrgica dirigido por enfermeras registradas después de cirugía plástica: enfermería nocturna, cuidado de heridas y drenajes, masaje linfático y transporte privado en el Norte de Virginia, Washington DC y el sur de Maryland. Consultas gratuitas.">
+<link rel="canonical" href="https://www.almanarecovery.com/es/">
+<link rel="alternate" hreflang="en" href="https://www.almanarecovery.com/">
+<link rel="alternate" hreflang="es" href="https://www.almanarecovery.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.almanarecovery.com/">
+<meta property="og:title" content="Almana Recovery: Recuperación Postquirúrgica con Enfermeras Registradas">
+<meta property="og:description" content="Cuidado privado de recuperación después de cirugía plástica, dirigido por enfermeras registradas, en el Norte de Virginia, Washington DC y el sur de Maryland.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.almanarecovery.com/es/">
+<meta property="og:image" content="https://www.almanarecovery.com/assets/founders.jpg">
+<meta name="theme-color" content="#4A3B2A">
+<link rel="icon" href="../assets/logo.png">
+
+<!--
+  ============================================================
+  PLACEHOLDERS TO FILL IN (search these):
+    BOOKING ........... Acuity REMOVED 2026-11 (Alma). Free consultation -> #contact form / call / text
+    PAYMENTS .......... #payments section, Zelle (ZELLE_CONTACT below; confirm with Alma)
+    WHATSAPP_URL ...... wa.me/17037558045 (WhatsApp Business on the public number)
+    PHONE ............. (703) 755-8045  (the ONE public number everywhere, 2026-11 Alma)
+    SPANISH ........... /es/index.html mirror; hreflang wired
+    CONTACT_ENDPOINT .. inquiry form POST target (Cloudflare Tunnel -> almana_webform); mailto fallback active
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --espresso:#4A3B2A; --espresso-dark:#2C2622; --olive:#6E7F63; --sage:#8A9A7B;
+ --sage-light:#8FA37E; --gold:#B08D57; --gold-light:#DDC79A;
+ --cream:#F9F1EB; --cream2:#FCF9F2; --ivory:#F4EBDA; --sand:#EFE6D3; --panel:#E7DBC2;
+ --text:#5a4f3d; --muted:#8a7f6d; --page:#faf9f5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.container{max-width:1240px;margin:0 auto;padding-left:40px;padding-right:40px}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.label{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
+.serif{font-family:'Playfair Display',serif}
+.cormorant{font-family:'Cormorant Garamond',serif}
+.btn{display:inline-flex;align-items:center;gap:12px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border-radius:100px;padding:16px 36px;transition:.2s;cursor:pointer;border:none}
+.btn-olive{background:var(--olive);color:var(--cream)}
+.btn-olive:hover{background:#5c6b53}
+.btn-gold{background:var(--gold);color:var(--espresso-dark)}
+.btn-gold:hover{background:#a07d47}
+.btn-outline{border:1px solid var(--gold);color:var(--espresso);background:transparent}
+.btn-outline:hover{background:var(--gold);color:var(--cream)}
+.textlink{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--olive);border-bottom:1px solid var(--olive);padding-bottom:3px}
+
+/* utility bar */
+.topbar{background:var(--espresso);color:var(--panel);font-family:'Montserrat',sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.topbar a{display:inline-flex;align-items:center;gap:8px}
+.topbar .grp{display:flex;align-items:center;gap:16px;white-space:nowrap}
+.diamond{color:var(--gold)}
+.pill-ghost{font-family:'Montserrat',sans-serif;letter-spacing:.16em;color:var(--ivory);border:1px solid rgba(176,141,87,.7);border-radius:100px;padding:5px 15px;transition:.2s}
+.pill-ghost:hover{background:rgba(176,141,87,.2)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(249,241,235,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(74,59,42,.1)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.nav img{height:58px;width:auto}
+.nav .links{display:flex;align-items:center;gap:40px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text);font-weight:500}
+.nav .links a:hover{color:var(--olive)}
+.nav .book{font-size:11px;padding:13px 26px}
+#navtoggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+#navtoggle span{width:24px;height:2px;background:var(--espresso);display:block}
+
+/* hero */
+.hero{max-width:900px;margin:0 auto;text-align:center;padding:88px 40px 72px}
+.hero .logo{width:340px;max-width:80%;margin:0 auto 26px}
+.hero .kicker{font-family:'Montserrat',sans-serif;font-size:26px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;line-height:1.35;max-width:22ch;margin:0 auto 26px}
+.hero p{font-size:18px;line-height:1.75;color:var(--text);max-width:56ch;margin:0 auto 38px}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.hero-band{max-width:1240px;margin:0 auto;padding:0 40px 96px}
+.hero-band .frame{height:440px;border-radius:16px;overflow:hidden;border:1px solid rgba(74,59,42,.08)}
+.hero-band img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* who we are */
+.who{max-width:1000px;margin:0 auto;text-align:center;padding:16px 40px 92px}
+.who .statement{font-family:'Playfair Display',serif;font-weight:400;font-size:34px;line-height:1.42;color:var(--olive);max-width:24ch;margin:24px auto 0}
+.who p.body{font-size:16px;line-height:1.8;color:var(--text);max-width:60ch;margin:28px auto 0}
+
+/* trust row */
+.trust{background:var(--sand);border-top:1px solid rgba(74,59,42,.08);border-bottom:1px solid rgba(74,59,42,.08)}
+.trust .container{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;padding-top:44px;padding-bottom:44px}
+.trust .num{font-family:'Playfair Display',serif;font-size:30px;color:var(--espresso);margin-bottom:6px}
+
+/* section head */
+.sec{padding:100px 0}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-head h2{font-size:44px;color:var(--olive);margin-top:14px}
+
+/* care cards (3 stages) */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.care-card{background:var(--cream2);border:1px solid rgba(74,59,42,.09);border-radius:14px;overflow:hidden}
+.care-card .ph{height:200px;overflow:hidden}
+.care-card .ph img{width:100%;height:100%;object-fit:cover}
+.care-card .body{padding:32px 30px}
+.care-card .stage{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.care-card .stage .no{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);line-height:1}
+.care-card h3{font-size:24px;color:var(--espresso);margin-bottom:12px}
+.care-card p{font-size:14.5px;line-height:1.7;color:var(--text);margin-bottom:20px}
+
+/* services (detailed) */
+.services{background:var(--cream2);border-top:1px solid rgba(74,59,42,.08)}
+.svc-group+.svc-group{margin-top:64px}
+.svc-group>.gtitle{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.svc-group>.gtitle h3{font-size:30px;color:var(--espresso)}
+.svc-group>.gtitle .line{flex:1;height:1px;background:rgba(176,141,87,.4)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--page);border:1px solid rgba(74,59,42,.09);border-radius:12px;padding:26px 26px}
+.svc .no{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;margin-bottom:8px}
+.svc h4{font-family:'Playfair Display',serif;font-weight:500;font-size:20px;color:var(--espresso);margin-bottom:10px}
+.svc p{font-size:14px;line-height:1.65;color:var(--text)}
+
+/* founders */
+.founders{background:var(--sand);border-top:1px solid rgba(74,59,42,.08)}
+.founders .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;align-items:stretch;max-width:1240px;margin:0 auto;padding:0 40px}
+.founders .photo{position:relative;min-height:520px;border-radius:12px;overflow:hidden;margin:56px 0}
+.founders .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.founders .copy{padding:80px 0 80px 72px;display:flex;flex-direction:column;justify-content:center}
+.founders h2{font-size:40px;color:var(--espresso);margin:22px 0 8px}
+.founders .role{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--olive);margin-bottom:24px}
+.founders p{font-size:16px;line-height:1.8;color:var(--text);max-width:52ch;margin-bottom:18px}
+
+/* testimonials */
+.testi{background:var(--olive);color:#F7EFDE}
+.testi .sec-head h2{color:#F7EFDE;max-width:20ch;margin-inline:auto}
+.testi .eyebrow{color:var(--gold-light)}
+.testi .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tcard{background:rgba(249,241,235,.08);border:1px solid rgba(247,239,222,.18);border-radius:14px;padding:34px 30px}
+.tcard .q{font-family:'Playfair Display',serif;font-size:44px;line-height:0;color:var(--gold);height:22px}
+.tcard p{font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5;color:#F7EFDE;margin:0 0 22px}
+.tcard .by{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:500}
+
+/* surgeons */
+.surgeons{background:var(--espresso);color:var(--panel);text-align:center}
+.surgeons .inner{max-width:1000px;margin:0 auto;padding:90px 40px}
+.surgeons h2{font-size:40px;color:#F7EFDE;margin:22px 0 24px;line-height:1.2}
+.surgeons p{font-size:17px;line-height:1.8;color:#d9cdb6;max-width:62ch;margin:0 auto 36px}
+
+/* contact */
+.contact{max-width:1000px;margin:0 auto;text-align:center;padding:100px 40px}
+.contact h2{font-size:52px;color:var(--espresso);margin:26px 0 20px;line-height:1.1}
+.contact>p{font-size:17px;line-height:1.75;color:var(--text);max-width:52ch;margin:0 auto 36px}
+.contact .info{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:34px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--muted)}
+.form-wrap{max-width:640px;margin:56px auto 0;text-align:left;background:var(--cream2);border:1px solid rgba(74,59,42,.1);border-radius:16px;padding:40px}
+.form-wrap h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--espresso);margin-bottom:6px}
+.form-wrap .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--olive);margin-bottom:26px}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;font-family:'Inter',sans-serif;font-size:15px;color:var(--espresso);background:#fff;border:1px solid rgba(74,59,42,.18);border-radius:9px;padding:12px 14px;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--olive)}
+.field textarea{min-height:110px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#formmsg{font-family:'Inter',sans-serif;font-size:14px;margin-top:14px}
+
+/* faq */
+.faq{background:var(--cream2);border-top:1px solid rgba(74,59,42,.08)}
+.faq .list{max-width:820px;margin:0 auto}
+.faq details{border-bottom:1px solid rgba(74,59,42,.12);padding:18px 0}
+.faq summary{cursor:pointer;list-style:none;font-family:'Playfair Display',serif;font-size:20px;color:var(--espresso);display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{font-size:15px;line-height:1.75;color:var(--text);margin-top:12px;max-width:68ch}
+
+/* pre-op + payments */
+.preop{background:var(--sand);border-top:1px solid rgba(74,59,42,.08)}
+.preop .inner{max-width:900px;margin:0 auto;text-align:center;padding:84px 40px}
+.preop h2{font-size:40px;color:var(--espresso);margin:18px 0 20px}
+.preop p{font-size:17px;line-height:1.8;color:var(--text);max-width:60ch;margin:0 auto 30px}
+.pay{max-width:760px;margin:0 auto;text-align:center;padding:72px 40px}
+.pay h2{font-size:34px;color:var(--espresso);margin:14px 0 14px}
+.pay p{font-size:16px;line-height:1.75;color:var(--text);max-width:56ch;margin:0 auto 14px}
+.pay .zelle{display:inline-block;margin-top:14px;font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--espresso);border:1px solid var(--gold);border-radius:12px;padding:16px 28px;background:var(--cream2)}
+.lang{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+
+/* footer */
+.footer{background:var(--espresso);color:#c9bda3}
+.footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;align-items:start;padding-top:64px;padding-bottom:36px}
+.footer .brand{font-family:'Playfair Display',serif;font-weight:500;font-size:30px;letter-spacing:.2em;color:var(--ivory)}
+.footer .rule{display:flex;align-items:center;gap:12px;margin:8px 0 4px}
+.footer .rule .cap{width:34px;height:1px;background:var(--gold)}
+.footer .rule .txt{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.footer .rule .flex{flex:1;height:1px;background:rgba(176,141,87,.4)}
+.footer p.desc{font-size:14px;line-height:1.7;color:#c9bda3;max-width:34ch;margin-top:14px}
+.footer .col-h{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
+.footer .col a,.footer .col span{display:block;font-family:'Inter',sans-serif;font-size:14px;color:#d9cdb6;margin-bottom:12px}
+.footer .col a:hover{color:var(--ivory)}
+.footer .copy{border-top:1px solid rgba(201,189,163,.2);padding:22px 0;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.1em;color:#a2957f;text-align:center}
+
+/* ---------- responsive ---------- */
+@media(max-width:960px){
+ .founders .grid{grid-template-columns:1fr}
+ .founders .photo{min-height:420px;margin:40px 0 0}
+ .founders .copy{padding:48px 0 56px}
+ .trust .container{grid-template-columns:repeat(2,1fr);gap:26px}
+ .cards3,.svc-grid,.testi .grid,.footer .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .container,.hero,.hero-band,.who,.surgeons .inner,.contact{padding-left:22px;padding-right:22px}
+ .nav .links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid rgba(74,59,42,.1)}
+ .nav .links.open{display:flex}
+ .nav .links a{padding:14px 40px;width:100%}
+ .nav .book{display:none}
+ #navtoggle{display:flex}
+ .topbar .grp{white-space:normal;flex-wrap:wrap;gap:10px 14px}
+ .topbar .grp a[href^="mailto"],.topbar .grp span[style*="opacity"]{display:none}
+ .hero{padding:56px 22px 52px}
+ .hero .kicker{font-size:21px}
+ .hero p{font-size:16px}
+ .sec{padding:66px 0}
+ .sec-head h2{font-size:32px}
+ .who .statement{font-size:26px}
+ .cards3,.svc-grid,.testi .grid,.footer .grid,.form-row,.trust .container{grid-template-columns:1fr}
+ .contact h2{font-size:38px}
+ .founders h2{font-size:32px}
+ .hero-band .frame{height:280px}
+ .form-wrap{padding:28px 22px}
+ .footer .grid{gap:30px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "HomeHealthCareService", "LocalBusiness"],
+  "@id": "https://www.almanarecovery.com/#business",
+  "name": "Almana Recovery & Aesthetics",
+  "alternateName": "Almana Recovery",
+  "legalName": "Almana Recovery & Aesthetics, LLC",
+  "url": "https://www.almanarecovery.com/",
+  "logo": "https://www.almanarecovery.com/assets/logo.png",
+  "image": "https://www.almanarecovery.com/assets/founders.jpg",
+  "description": "Registered-nurse-led post-surgical recovery care after plastic surgery: overnight nursing, wound and drain care, lymphatic massage, and private transportation across Northern Virginia, Washington DC, and Southern Maryland.",
+  "telephone": "+1-703-755-8045",
+  "email": "info@almanarecovery.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6559 Edsall Road",
+    "addressLocality": "Springfield",
+    "addressRegion": "VA",
+    "postalCode": "22151",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Northern Virginia"},
+    {"@type": "City", "name": "Washington, DC"},
+    {"@type": "AdministrativeArea", "name": "Southern Maryland"},
+    {"@type": "City", "name": "Springfield, VA"},
+    {"@type": "City", "name": "Alexandria, VA"},
+    {"@type": "City", "name": "Arlington, VA"},
+    {"@type": "City", "name": "Fairfax, VA"},
+    {"@type": "City", "name": "Annandale, VA"},
+    {"@type": "City", "name": "Tysons, VA"},
+    {"@type": "City", "name": "McLean, VA"},
+    {"@type": "City", "name": "Woodbridge, VA"}
+  ],
+  "openingHours": "Mo-Fr by appointment",
+  "availableLanguage": ["English", "Spanish"],
+  "inLanguage": "es",
+  "priceRange": "$$",
+  "founder": [
+    {"@type": "Person", "name": "Analia Leites", "jobTitle": "Registered Nurse", "honorificSuffix": "RN"},
+    {"@type": "Person", "name": "Alma Hernandez-Hercules", "jobTitle": "Registered Nurse", "honorificSuffix": "RN"}
+  ],
+  "medicalSpecialty": "Nursing",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Post-surgical recovery services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Private transportation from surgical center"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Overnight nursing care"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wellness checks"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wound care"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Post-operative lymphatic massage"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drain removal"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Staple and stitch removal"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seroma management"}},
+      {"@type": "Offer", "price": "0", "priceCurrency": "USD", "itemOffered": {"@type": "Service", "name": "Pre-operative recovery consultation"}}
+    ]
+  },
+  "sameAs": [
+    "https://www.google.com/maps/search/Almana+Recovery+%26+Aesthetics+Springfield+VA"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es",
+  "mainEntity": [
+    {"@type": "Question", "name": "Are your nurses registered nurses (RNs)?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Almana was founded and is run by two registered nurses, Analia Leites, RN and Alma Hernandez-Hercules, RN, licensed in Virginia, Maryland, and the District of Columbia. Your care is provided or directly supervised by a registered nurse."}},
+    {"@type": "Question", "name": "Which procedures do you support?", "acceptedAnswer": {"@type": "Answer", "text": "Plastic and cosmetic surgery recovery, including tummy tuck, liposuction and body contouring, Brazilian butt lift, breast surgery, facelift, rhinoplasty, and mommy makeover procedures, as well as other outpatient surgeries where the surgeon recommends skilled recovery support."}},
+    {"@type": "Question", "name": "Where do you provide care?", "acceptedAnswer": {"@type": "Answer", "text": "At your home or hotel across Northern Virginia, Washington DC, and Southern Maryland. Lymphatic massage and wound care are also available in our office at 6559 Edsall Road, Springfield, Virginia, by appointment."}},
+    {"@type": "Question", "name": "Do you work with my surgeon?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We follow your surgeon's written post-operative protocol exactly and coordinate with their office on drains, sutures, medications, and any concern during recovery."}},
+    {"@type": "Question", "name": "What does overnight care include?", "acceptedAnswer": {"@type": "Answer", "text": "A registered nurse stays with you through the night to monitor vital signs, manage pain and medication, assist with mobility, bathroom visits, and compression garments, and respond to anything that arises."}},
+    {"@type": "Question", "name": "Do you remove drains, staples, and stitches?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Drain, staple, and suture removal are performed by a registered nurse at the time your surgeon specifies, at home or in our office."}},
+    {"@type": "Question", "name": "Do you offer transportation from the surgical center?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Private, discreet transportation from the surgical center to your home or hotel, with a nurse accompanying you."}},
+    {"@type": "Question", "name": "Is the consultation free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pre-operative recovery consultations are free. Call or text (703) 755-8045, message us on WhatsApp, or send the website form."}},
+    {"@type": "Question", "name": "Do you speak Spanish?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our founders are bilingual and a Spanish version of the site is available at almanarecovery.com/es/."}},
+    {"@type": "Question", "name": "How do I pay?", "acceptedAnswer": {"@type": "Answer", "text": "Existing patients can pay by Zelle. Care plans and pricing are discussed during the free consultation."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="topbar">
+  <div class="container">
+    <div class="grp">
+      <a href="tel:+17037558045"><span class="diamond">&#9670;</span>(703) 755-8045</a>
+      <a href="https://wa.me/17037558045" style="color:var(--sage-light)" title="Escríbanos por WhatsApp">WhatsApp</a>
+      <span style="color:var(--gold-light)">We speak English</span>
+    </div>
+    <div class="grp">
+      <a href="mailto:info@almanarecovery.com">info@almanarecovery.com</a>
+      <span style="opacity:.4">|</span>
+      <a class="pill-ghost" href="#payments" title="Pagos de pacientes actuales">Pacientes Actuales</a>
+      <a class="pill-ghost lang" href="/" lang="en" hreflang="en">English</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="container">
+    <a href="#home"><img src="../assets/logo.png" alt="Almana Recovery &amp; Aesthetics"></a>
+    <div class="links" id="navlinks">
+      <a href="#services">Servicios</a>
+      <a href="#care">Nuestro Cuidado</a>
+      <a href="#founders">Nosotras</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contact">Contacto</a>
+    </div>
+    <a class="btn btn-olive book" href="#contact">Consulta Gratuita</a>
+    <button id="navtoggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="home" class="hero">
+  <img class="logo" src="../assets/logo.png" alt="Logotipo de Almana Recovery">
+  <div class="kicker">Recuperación de Lujo Respaldada por Experiencia Clínica</div>
+  <p>Cuidado postquirúrgico privado dirigido por enfermeras registradas después de su cirugía plástica, en su casa u hotel en el Norte de Virginia, Washington DC y el sur de Maryland. Comodidad, seguridad y tranquilidad en cada etapa de su recuperación.</p>
+  <div class="hero-actions">
+    <a class="btn btn-olive" href="#contact">Solicite una Consulta Gratuita &rarr;</a>
+    <a class="textlink" style="color:var(--espresso);border-color:var(--gold)" href="tel:+17037558045">Llame o envíe un texto al (703) 755-8045</a>
+  </div>
+</header>
+<div class="hero-band">
+  <div class="frame"><img src="../assets/recovery-suite.jpg" alt="Una lujosa suite privada de recuperación"></div>
+</div>
+
+<!-- ============ WHO WE ARE ============ -->
+<section id="care" class="who">
+  <div class="eyebrow">Quiénes somos</div>
+  <p class="statement">Fundada por dos enfermeras registradas con 35 años de experiencia combinada, Almana aporta experiencia clínica y lujo discreto a cada etapa de su recuperación postquirúrgica.</p>
+  <p class="body">Nuestras enfermeras registradas, con licencia en Virginia, Maryland y el Distrito de Columbia, vigilan de cerca su sanación, manejan su comodidad y medicamentos, y coordinan cada detalle para que usted simplemente descanse, proteja sus resultados y se recupere con confianza.</p>
+</section>
+
+<!-- ============ TRUST ROW ============ -->
+<div class="trust">
+  <div class="container">
+    <div><div class="num">Enfermeras RN</div><div class="label">Con licencia en VA, MD y DC</div></div>
+    <div><div class="num">24 / 7</div><div class="label">Cuidado nocturno disponible</div></div>
+    <div><div class="num">Discreción</div><div class="label">Privado y confidencial</div></div>
+    <div><div class="num">Alineadas</div><div class="label">Seguimos el protocolo de su cirujano</div></div>
+  </div>
+</div>
+
+<!-- ============ OUR CARE (3 stages) ============ -->
+<section class="sec"><div class="container">
+  <div class="sec-head">
+    <div class="eyebrow">Cómo cuidamos</div>
+    <h2>Cuidado para cada etapa de su recuperación</h2>
+  </div>
+  <div class="cards3">
+    <article class="care-card">
+      <div class="ph"><img src="../assets/care-1.jpg" alt="Una enfermera atendiendo a una paciente cómoda durante su recuperación" loading="lazy"></div>
+      <div class="body">
+        <div class="stage"><span class="no">01</span><span class="label">Primeras 24 a 72 horas</span></div>
+        <h3>Inmediatamente después de la cirugía</h3>
+        <p>Enfermería las 24 horas durante sus primeros días en casa, con manejo experto de medicamentos y heridas, y monitoreo atento para mantener su recuperación segura y en curso.</p>
+        <a class="textlink" href="#contact">Más información</a>
+      </div>
+    </article>
+    <article class="care-card">
+      <div class="ph"><img src="../assets/care-2.jpg" alt="Una enfermera brindando cuidado suave de heridas y recuperación" loading="lazy"></div>
+      <div class="body">
+        <div class="stage"><span class="no">02</span><span class="label">Las semanas de sanación</span></div>
+        <h3>Durante su recuperación</h3>
+        <p>Mientras sana en casa o en un hotel, las visitas de bienestar incluyen cuidado de heridas y drenajes, masaje linfático, asistencia para bañarse, educación al paciente y manejo de fajas de compresión.</p>
+        <a class="textlink" href="#contact">Más información</a>
+      </div>
+    </article>
+    <article class="care-card">
+      <div class="ph"><img src="../assets/care-3.jpg" alt="Esenciales de bienestar y autocuidado" loading="lazy"></div>
+      <div class="body">
+        <div class="stage"><span class="no">03</span><span class="label">Más allá de la recuperación</span></div>
+        <h3>Bienestar continuo</h3>
+        <p>Cuidado continuo a su medida, en la oficina o en casa, con masaje linfático, cuidado de cicatrices, monitoreo de seromas y orientación amable para que se vea y se sienta lo mejor posible.</p>
+        <a class="textlink" href="#contact">Más información</a>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ SERVICES (detailed, from original site) ============ -->
+<section id="services" class="services sec"><div class="container">
+  <div class="sec-head">
+    <div class="eyebrow">Lo que ofrecemos</div>
+    <h2>Nuestros Servicios</h2>
+  </div>
+
+  <div class="svc-group">
+    <div class="gtitle"><h3>Recuperación, reimaginada</h3><span class="line"></span></div>
+    <div class="svc-grid">
+      <div class="svc"><div class="no">01</div><h4>Transporte privado</h4><p>Transporte seguro y discreto desde el centro quirúrgico hasta su casa u hotel, con una enfermera a su lado para una transición tranquila y cómoda después de su procedimiento.</p></div>
+      <div class="svc"><div class="no">02</div><h4>Cuidado nocturno de enfermería</h4><p>Una enfermera registrada con usted durante la noche para monitorear signos vitales, manejar medicamentos y comodidad, y asistirle en las primeras horas más críticas de la recuperación.</p></div>
+      <div class="svc"><div class="no">03</div><h4>Visitas de bienestar</h4><p>Visitas personalizadas en persona para evaluar el progreso de la sanación, manejar molestias y ajustar su plan de cuidado mientras se recupera.</p></div>
+      <div class="svc"><div class="no">04</div><h4>Cuidado de heridas</h4><p>Cuidado profesional de heridas en la oficina o en la comodidad de su casa, siguiendo exactamente el protocolo postoperatorio de su cirujano.</p></div>
+      <div class="svc"><div class="no">05</div><h4>Masaje linfático postoperatorio</h4><p>Drenaje linfático manual suave, en su casa o en nuestra oficina de Springfield, para reducir la inflamación, promover la circulación y apoyar cada etapa de su recuperación.</p></div>
+      <div class="svc"><div class="no">06</div><h4>Retiro de drenajes</h4><p>Retiro de drenajes estéril y suave, realizado con precisión según las indicaciones de su cirujano. Cómodo, seguro y tranquilizador.</p></div>
+      <div class="svc"><div class="no">07</div><h4>Retiro de grapas y puntos</h4><p>Retiro de suturas y grapas en el momento que indique su cirujano, con inspección cuidadosa de cada incisión mientras sana.</p></div>
+      <div class="svc"><div class="no">08</div><h4>Manejo de seromas</h4><p>Monitoreo y manejo de acumulaciones de líquido postoperatorias en coordinación con su cirujano, para que las pequeñas preocupaciones nunca se conviertan en grandes.</p></div>
+    </div>
+  </div>
+
+</div></section>
+
+<!-- ============ PRE-OPERATIVE CONSULTATION ============ -->
+<section id="preop" class="preop"><div class="inner">
+  <div class="eyebrow">Antes de la cirugía</div>
+  <h2>Una consulta preoperatoria de recuperación gratuita</h2>
+  <p>Las mejores recuperaciones se planifican antes del día de la cirugía. En una consulta gratuita, una enfermera registrada revisa su procedimiento, las instrucciones postoperatorias de su cirujano y la preparación de su casa, y construye un plan de recuperación a su alrededor: quién estará con usted la primera noche, cómo funciona el transporte, cuándo se retiran los drenajes y las suturas, y qué tener listo en casa.</p>
+  <a class="btn btn-olive" href="#contact">Agende una Consulta Gratuita &rarr;</a>
+</div></section>
+
+<!-- ============ FOUNDERS ============ -->
+<section id="founders" class="founders">
+  <div class="grid">
+    <div class="photo"><img src="../assets/founders.jpg" alt="Analia Leites, RN y Alma Hernandez-Hercules, RN, fundadoras de Almana Recovery" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow">Conozca a las fundadoras</div>
+      <h2>Ana &amp; Alma</h2>
+      <div class="role">Enfermeras Registradas &middot; Fundadoras</div>
+      <p><strong>Analia (Ana) Leites, RN</strong>, 20 años de experiencia en enfermería. <strong>Alma Hernandez-Hercules, RN</strong>, 15 años de experiencia en enfermería. Ambas son enfermeras registradas con licencia en Virginia, Maryland y el Distrito de Columbia.</p>
+      <p>Almana nació de años dentro del mundo quirúrgico y de cuidados críticos, y de la convicción de que la recuperación merece la misma experiencia y gracia que el procedimiento mismo.</p>
+      <p>Entendemos íntimamente la experiencia del paciente, y llegamos, cada vez, con las herramientas, la calma y el juicio clínico para ayudarle a sanar de forma segura y hermosa.</p>
+      <p style="font-size:13px;color:var(--muted)">Verifique nuestras licencias en el <a href="https://www.dhp.virginia.gov/" style="color:var(--olive)">Departamento de Profesiones de la Salud de Virginia</a>, la <a href="https://mbon.maryland.gov/" style="color:var(--olive)">Junta de Enfermería de Maryland</a> y <a href="https://dchealth.dc.gov/" style="color:var(--olive)">DC Health</a>.</p>
+      <a class="btn btn-outline" style="align-self:flex-start" href="#contact">Nuestra Historia</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<div class="testi"><div class="container" style="padding-top:96px;padding-bottom:96px">
+  <div class="sec-head">
+    <div class="eyebrow">Palabras amables</div>
+    <h2>La confianza de pacientes, la recomendación de cirujanos</h2>
+  </div>
+  <div class="grid">
+    <div class="tcard"><div class="q">&ldquo;</div><p>Desde el día de la cirugía, siempre hubo alguien ahí. Nunca me sentí sola ni insegura. Pude simplemente descansar y dejarme sanar.</p><div class="by">Paciente de recuperación &middot; Fairfax</div></div>
+    <div class="tcard"><div class="q">&ldquo;</div><p>Almana sigue mis protocolos postoperatorios exactamente. Mis pacientes están más seguras, más tranquilas, y sus resultados están protegidos.</p><div class="by">Cirujano plástico certificado</div></div>
+    <div class="tcard"><div class="q">&ldquo;</div><p>Todo estaba listo antes de llegar a casa: mi espacio, mis medicamentos, mis preguntas respondidas. Un cuidado verdaderamente impecable.</p><div class="by">Paciente postoperatoria &middot; Arlington</div></div>
+  </div>
+</div></div>
+
+<!-- ============ NOTE TO SURGEONS ============ -->
+<div class="surgeons"><div class="inner">
+  <div class="eyebrow">Una nota para cirujanos</div>
+  <h2>Una extensión confiable de su práctica</h2>
+  <p>Trabajamos en perfecta coordinación con su equipo para cumplir sus protocolos postoperatorios con precisión: el puente entre su experiencia quirúrgica y la recuperación que sus pacientes merecen.</p>
+  <a class="btn btn-gold" href="#contact">Colabore con Almana &rarr;</a>
+</div></div>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="faq sec"><div class="container">
+  <div class="sec-head">
+    <div class="eyebrow">Preguntas</div>
+    <h2>Preguntas frecuentes</h2>
+  </div>
+  <div class="list">
+    <details><summary>¿Sus enfermeras son enfermeras registradas (RN)?</summary><p>Sí. Almana fue fundada y es dirigida por dos enfermeras registradas, Analia Leites, RN y Alma Hernandez-Hercules, RN, con licencia en Virginia, Maryland y el Distrito de Columbia. Su cuidado es brindado o supervisado directamente por una enfermera registrada.</p></details>
+    <details><summary>¿Qué procedimientos atienden?</summary><p>Cuidamos a pacientes que se recuperan de cirugía plástica y estética, incluyendo abdominoplastia, liposucción y contorno corporal, levantamiento de glúteos brasileño (BBL), aumento, levantamiento o reducción de senos, lifting facial, rinoplastia y mommy makeover, así como otras cirugías ambulatorias en las que su cirujano recomiende apoyo de recuperación especializado.</p></details>
+    <details><summary>¿Dónde brindan el cuidado?</summary><p>En su casa u hotel en el Norte de Virginia, Washington DC y el sur de Maryland. El masaje linfático y el cuidado de heridas también están disponibles en nuestra oficina en 6559 Edsall Road, Springfield, Virginia, con cita previa.</p></details>
+    <details><summary>¿Trabajan con mi cirujano?</summary><p>Sí. Seguimos exactamente el protocolo postoperatorio escrito de su cirujano y coordinamos con su consultorio sobre drenajes, suturas, medicamentos y cualquier inquietud que surja durante la recuperación.</p></details>
+    <details><summary>¿Qué incluye el cuidado nocturno?</summary><p>Una enfermera registrada se queda con usted durante la noche para monitorear signos vitales, manejar el dolor y los medicamentos, asistir con la movilidad, las idas al baño y las fajas de compresión, y responder a cualquier cosa que surja.</p></details>
+    <details><summary>¿Retiran drenajes, grapas y puntos?</summary><p>Sí. El retiro de drenajes, grapas y suturas lo realiza una enfermera registrada en el momento que indique su cirujano, en casa o en nuestra oficina.</p></details>
+    <details><summary>¿Ofrecen transporte desde el centro quirúrgico?</summary><p>Sí. Transporte privado y discreto desde el centro quirúrgico hasta su casa u hotel, con una enfermera acompañándole.</p></details>
+    <details><summary>¿La consulta es gratuita?</summary><p>Sí. Las consultas preoperatorias de recuperación son gratuitas. Llame o envíe un texto al (703) 755-8045, escríbanos por WhatsApp o envíe el formulario a continuación.</p></details>
+    <details><summary>¿Hablan inglés?</summary><p>Sí. Nuestras fundadoras son bilingües. <a href="/" style="color:var(--olive)">Visit our site in English.</a></p></details>
+    <details><summary>¿Cómo pago?</summary><p>Los pacientes actuales pueden pagar por Zelle. Vea <a href="#payments" style="color:var(--olive)">Pagos</a> más abajo. Los planes de cuidado y precios se conversan durante su consulta gratuita.</p></details>
+  </div>
+</div></section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <svg width="72" height="30" viewBox="0 0 72 30" aria-hidden="true" style="margin:0 auto 6px">
+    <path d="M8 15 C 26 15, 46 15, 64 15" fill="none" stroke="#8A9A7B" stroke-width="1.1" stroke-linecap="round"></path>
+    <g fill="#8A9A7B">
+      <ellipse cx="24" cy="10" rx="5" ry="2" transform="rotate(-24 24 10)"></ellipse>
+      <ellipse cx="36" cy="9" rx="5" ry="2" transform="rotate(-24 36 9)"></ellipse>
+      <ellipse cx="48" cy="10" rx="5" ry="2" transform="rotate(-24 48 10)"></ellipse>
+      <ellipse cx="30" cy="20" rx="5" ry="2" transform="rotate(24 30 20)"></ellipse>
+      <ellipse cx="42" cy="21" rx="5" ry="2" transform="rotate(24 42 21)"></ellipse>
+    </g>
+  </svg>
+  <h2>Comience su recuperación con Almana</h2>
+  <p>Cuéntenos sobre su procedimiento y sus fechas, y crearemos un plan de recuperación hecho enteramente para usted. Las consultas son gratuitas.</p>
+  <a class="btn btn-olive" href="tel:+17037558045">Llame o Envíe un Texto al (703) 755-8045 &rarr;</a>
+  <div class="info">
+    <span>6559 Edsall Rd, Springfield, VA 22151</span><span class="diamond">&#9670;</span>
+    <a href="tel:+17037558045">(703) 755-8045</a><span class="diamond">&#9670;</span>
+    <a href="mailto:info@almanarecovery.com">info@almanarecovery.com</a><span class="diamond">&#9670;</span>
+    <span>Lunes a viernes, con cita previa</span><span class="diamond">&#9670;</span>
+    <span>Servimos el Norte de Virginia, DC y el sur de Maryland</span>
+  </div>
+
+  <!-- Inquiry form: posts to CONTACT_ENDPOINT (self-hosted almana_webform via Cloudflare Tunnel); mailto fallback -->
+  <div class="form-wrap">
+    <h3>Solicite una Consulta Gratuita</h3>
+    <div class="sub">Discreto. Personal. Siempre confidencial.</div>
+    <form id="inquiry">
+      <div class="form-row">
+        <div class="field"><label for="name">Nombre</label><input id="name" name="name" type="text" required></div>
+        <div class="field"><label for="phone">Teléfono</label><input id="phone" name="phone" type="tel"></div>
+      </div>
+      <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="interest">Me interesa</label>
+        <select id="interest" name="interest">
+          <option>Consulta preoperatoria de recuperación</option>
+          <option>Recuperación postquirúrgica</option>
+          <option>Cuidado nocturno de enfermería</option>
+          <option>Masaje linfático postoperatorio</option>
+          <option>Cuidado de heridas, drenajes o suturas</option>
+          <option>Aún no estoy segura</option>
+        </select>
+      </div>
+      <div class="field"><label for="message">Cuéntenos sobre sus necesidades</label><textarea id="message" name="message"></textarea></div>
+      <p style="font-size:12px;line-height:1.55;color:var(--muted);margin:-2px 0 16px">Al enviar este formulario, usted acepta expresamente recibir mensajes de texto conversacionales de Almana Recovery &amp; Aesthetics sobre su consulta y cuidado. La frecuencia de mensajes varía. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para cancelar, HELP para ayuda. Consulte nuestra <a href="/privacy.html" style="color:var(--olive)">Política de Privacidad</a> y <a href="/terms.html" style="color:var(--olive)">Términos</a> (en inglés).</p>
+      <button class="btn btn-olive" type="submit" style="width:100%;justify-content:center">Enviar Consulta</button>
+      <div id="formmsg"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ PAYMENTS ============ -->
+<section id="payments" class="pay">
+  <div class="eyebrow">Pacientes actuales</div>
+  <h2>Pagos</h2>
+  <p>Los pacientes actuales pueden pagar sus facturas por Zelle. Envíe el pago al contacto a continuación e incluya su nombre y la fecha del servicio en la nota.</p>
+  <!-- ZELLE_CONTACT: confirm with Alma before publishing -->
+  <div class="zelle">Zelle: Almana Recovery &amp; Aesthetics, LLC &middot; (703) 215-5338</div>
+  <p style="margin-top:18px;font-size:14px;color:var(--muted)">¿Preguntas sobre una factura? Llame o envíe un texto al (703) 755-8045.</p>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <div class="brand">ALMANA</div>
+        <div class="rule"><span class="cap"></span><span class="txt">Recovery</span><span class="flex"></span></div>
+        <p class="desc">Cuidado de recuperación postquirúrgica dirigido por enfermeras registradas, brindado con calidez y discreción en el Norte de Virginia, Washington DC y el sur de Maryland.</p>
+      </div>
+      <div class="col">
+        <div class="col-h">Explorar</div>
+        <a href="#services">Servicios</a>
+        <a href="#care">Nuestro Cuidado</a>
+        <a href="#founders">Nosotras</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contact">Contacto</a>
+        <a href="/" lang="en" hreflang="en">English</a>
+      </div>
+      <div class="col">
+        <div class="col-h">Visítenos</div>
+        <span>6559 Edsall Road</span>
+        <span>Springfield, Virginia 22151</span>
+        <a href="tel:+17037558045">(703) 755-8045</a>
+        <a href="mailto:info@almanarecovery.com">info@almanarecovery.com</a>
+        <span>Lunes a viernes, con cita previa</span>
+      </div>
+    </div>
+  </div>
+  <div class="copy">&copy; <span id="yr"></span> Almana Recovery &amp; Aesthetics, LLC &middot; Todos los derechos reservados. &nbsp;·&nbsp; <a href="/privacy.html" style="color:#c9bda3">Política de Privacidad</a> &nbsp;·&nbsp; <a href="/terms.html" style="color:#c9bda3">Términos y Condiciones</a></div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+// mobile nav
+var t=document.getElementById('navtoggle'),l=document.getElementById('navlinks');
+t.addEventListener('click',function(){l.classList.toggle('open');});
+l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('open');});
+
+// inquiry form -> CONTACT_ENDPOINT with graceful mailto fallback
+var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // TODO: confirm Cloudflare Tunnel hostname
+var f=document.getElementById('inquiry'),msg=document.getElementById('formmsg');
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var data={name:name.value,phone:phone.value,email:email.value,interest:interest.value,message:message.value};
+  msg.style.color='#6E7F63';msg.textContent='Enviando…';
+  fetch(CONTACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){if(!r.ok)throw 0;return r;})
+    .then(function(){f.reset();msg.style.color='#6E7F63';msg.textContent='Gracias. Nos comunicaremos con usted personalmente, y siempre de forma confidencial.';})
+    .catch(function(){
+      // fallback: open the visitor's email client pre-filled to info@
+      var body=encodeURIComponent('Name: '+data.name+'\nPhone: '+data.phone+'\nEmail: '+data.email+'\nInterested in: '+data.interest+'\n\n'+data.message);
+      msg.style.color='#8a7f6d';
+      msg.innerHTML='Abriendo su aplicación de correo para enviar de forma segura… Si no ocurre nada, escriba a <a href="mailto:info@almanarecovery.com" style="color:#6E7F63">info@almanarecovery.com</a>.';
+      window.location.href='mailto:info@almanarecovery.com?subject='+encodeURIComponent('Solicitud de consulta gratuita: '+data.name)+'&body='+body;
+    });
+});
+</script>
+</body>
+</html>

@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Almana Recovery &amp; Aesthetics — Concierge Post-Surgical Recovery in Northern Virginia</title>
-<meta name="description" content="Almana Recovery &amp; Aesthetics offers concierge post-surgical recovery, lymphatic drainage, and luxury aesthetic treatments in Springfield, Virginia. Heal beautifully. Recover with dignity.">
+<title>Almana Recovery: RN-Led Post-Surgical Recovery Nursing in Northern Virginia, DC and Maryland</title>
+<meta name="description" content="Almana Recovery provides registered-nurse-led post-surgical recovery care after plastic surgery: overnight nursing, wound and drain care, lymphatic massage, and private transportation across Northern Virginia, Washington DC, and Southern Maryland. Free consultations. Se habla español.">
 <link rel="canonical" href="https://www.almanarecovery.com/">
-<meta property="og:title" content="Almana Recovery &amp; Aesthetics">
-<meta property="og:description" content="Private, nurse-led post-surgical recovery and luxury aesthetic care in Northern Virginia.">
+<link rel="alternate" hreflang="en" href="https://www.almanarecovery.com/">
+<link rel="alternate" hreflang="es" href="https://www.almanarecovery.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.almanarecovery.com/">
+<meta property="og:title" content="Almana Recovery: RN-Led Post-Surgical Recovery Nursing">
+<meta property="og:description" content="Private, registered-nurse-led recovery care after plastic surgery across Northern Virginia, Washington DC, and Southern Maryland.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.almanarecovery.com/">
 <meta property="og:image" content="https://www.almanarecovery.com/assets/founders.jpg">
@@ -17,10 +20,11 @@
 <!--
   ============================================================
   PLACEHOLDERS TO FILL IN (search these):
-    BOOKING_URL  ...... wired to Acuity (live)
-    PAYMENT_URL  ...... "Existing Patients" -> future payment portal (href="#" for now)
-    WHATSAPP_URL ...... wa.me/17032155338  (703-215-5338 = Verizon; WhatsApp + Zelle only)
-    PHONE ............. (703) 755-8045  (public call/text line — Grasshopper) — LIVE
+    BOOKING ........... Acuity REMOVED 2026-11 (Alma). Free consultation -> #contact form / call / text
+    PAYMENTS .......... #payments section, Zelle (ZELLE_CONTACT below; confirm with Alma)
+    WHATSAPP_URL ...... wa.me/17037558045 (WhatsApp Business on the public number)
+    PHONE ............. (703) 755-8045  (the ONE public number everywhere, 2026-11 Alma)
+    SPANISH ........... /es/index.html mirror; hreflang wired
     CONTACT_ENDPOINT .. inquiry form POST target (Cloudflare Tunnel -> almana_webform); mailto fallback active
   ============================================================
 -->
@@ -165,6 +169,27 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 #formmsg{font-family:'Inter',sans-serif;font-size:14px;margin-top:14px}
 
+/* faq */
+.faq{background:var(--cream2);border-top:1px solid rgba(74,59,42,.08)}
+.faq .list{max-width:820px;margin:0 auto}
+.faq details{border-bottom:1px solid rgba(74,59,42,.12);padding:18px 0}
+.faq summary{cursor:pointer;list-style:none;font-family:'Playfair Display',serif;font-size:20px;color:var(--espresso);display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{font-size:15px;line-height:1.75;color:var(--text);margin-top:12px;max-width:68ch}
+
+/* pre-op + payments */
+.preop{background:var(--sand);border-top:1px solid rgba(74,59,42,.08)}
+.preop .inner{max-width:900px;margin:0 auto;text-align:center;padding:84px 40px}
+.preop h2{font-size:40px;color:var(--espresso);margin:18px 0 20px}
+.preop p{font-size:17px;line-height:1.8;color:var(--text);max-width:60ch;margin:0 auto 30px}
+.pay{max-width:760px;margin:0 auto;text-align:center;padding:72px 40px}
+.pay h2{font-size:34px;color:var(--espresso);margin:14px 0 14px}
+.pay p{font-size:16px;line-height:1.75;color:var(--text);max-width:56ch;margin:0 auto 14px}
+.pay .zelle{display:inline-block;margin-top:14px;font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--espresso);border:1px solid var(--gold);border-radius:12px;padding:16px 28px;background:var(--cream2)}
+.lang{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+
 /* footer */
 .footer{background:var(--espresso);color:#c9bda3}
 .footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;align-items:start;padding-top:64px;padding-bottom:36px}
@@ -194,6 +219,8 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
  .nav .links a{padding:14px 40px;width:100%}
  .nav .book{display:none}
  #navtoggle{display:flex}
+ .topbar .grp{white-space:normal;flex-wrap:wrap;gap:10px 14px}
+ .topbar .grp a[href^="mailto"],.topbar .grp span[style*="opacity"]{display:none}
  .hero{padding:56px 22px 52px}
  .hero .kicker{font-size:21px}
  .hero p{font-size:16px}
@@ -208,6 +235,87 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
  .footer .grid{gap:30px}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "HomeHealthCareService", "LocalBusiness"],
+  "@id": "https://www.almanarecovery.com/#business",
+  "name": "Almana Recovery & Aesthetics",
+  "alternateName": "Almana Recovery",
+  "legalName": "Almana Recovery & Aesthetics, LLC",
+  "url": "https://www.almanarecovery.com/",
+  "logo": "https://www.almanarecovery.com/assets/logo.png",
+  "image": "https://www.almanarecovery.com/assets/founders.jpg",
+  "description": "Registered-nurse-led post-surgical recovery care after plastic surgery: overnight nursing, wound and drain care, lymphatic massage, and private transportation across Northern Virginia, Washington DC, and Southern Maryland.",
+  "telephone": "+1-703-755-8045",
+  "email": "info@almanarecovery.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6559 Edsall Road",
+    "addressLocality": "Springfield",
+    "addressRegion": "VA",
+    "postalCode": "22151",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Northern Virginia"},
+    {"@type": "City", "name": "Washington, DC"},
+    {"@type": "AdministrativeArea", "name": "Southern Maryland"},
+    {"@type": "City", "name": "Springfield, VA"},
+    {"@type": "City", "name": "Alexandria, VA"},
+    {"@type": "City", "name": "Arlington, VA"},
+    {"@type": "City", "name": "Fairfax, VA"},
+    {"@type": "City", "name": "Annandale, VA"},
+    {"@type": "City", "name": "Tysons, VA"},
+    {"@type": "City", "name": "McLean, VA"},
+    {"@type": "City", "name": "Woodbridge, VA"}
+  ],
+  "openingHours": "Mo-Fr by appointment",
+  "availableLanguage": ["English", "Spanish"],
+  "priceRange": "$$",
+  "founder": [
+    {"@type": "Person", "name": "Analia Leites", "jobTitle": "Registered Nurse", "honorificSuffix": "RN"},
+    {"@type": "Person", "name": "Alma Hernandez-Hercules", "jobTitle": "Registered Nurse", "honorificSuffix": "RN"}
+  ],
+  "medicalSpecialty": "Nursing",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Post-surgical recovery services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Private transportation from surgical center"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Overnight nursing care"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wellness checks"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wound care"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Post-operative lymphatic massage"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drain removal"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Staple and stitch removal"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seroma management"}},
+      {"@type": "Offer", "price": "0", "priceCurrency": "USD", "itemOffered": {"@type": "Service", "name": "Pre-operative recovery consultation"}}
+    ]
+  },
+  "sameAs": [
+    "https://www.google.com/maps/search/Almana+Recovery+%26+Aesthetics+Springfield+VA"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Are your nurses registered nurses (RNs)?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Almana was founded and is run by two registered nurses, Analia Leites, RN and Alma Hernandez-Hercules, RN, licensed in Virginia, Maryland, and the District of Columbia. Your care is provided or directly supervised by a registered nurse."}},
+    {"@type": "Question", "name": "Which procedures do you support?", "acceptedAnswer": {"@type": "Answer", "text": "Plastic and cosmetic surgery recovery, including tummy tuck, liposuction and body contouring, Brazilian butt lift, breast surgery, facelift, rhinoplasty, and mommy makeover procedures, as well as other outpatient surgeries where the surgeon recommends skilled recovery support."}},
+    {"@type": "Question", "name": "Where do you provide care?", "acceptedAnswer": {"@type": "Answer", "text": "At your home or hotel across Northern Virginia, Washington DC, and Southern Maryland. Lymphatic massage and wound care are also available in our office at 6559 Edsall Road, Springfield, Virginia, by appointment."}},
+    {"@type": "Question", "name": "Do you work with my surgeon?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We follow your surgeon's written post-operative protocol exactly and coordinate with their office on drains, sutures, medications, and any concern during recovery."}},
+    {"@type": "Question", "name": "What does overnight care include?", "acceptedAnswer": {"@type": "Answer", "text": "A registered nurse stays with you through the night to monitor vital signs, manage pain and medication, assist with mobility, bathroom visits, and compression garments, and respond to anything that arises."}},
+    {"@type": "Question", "name": "Do you remove drains, staples, and stitches?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Drain, staple, and suture removal are performed by a registered nurse at the time your surgeon specifies, at home or in our office."}},
+    {"@type": "Question", "name": "Do you offer transportation from the surgical center?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Private, discreet transportation from the surgical center to your home or hotel, with a nurse accompanying you."}},
+    {"@type": "Question", "name": "Is the consultation free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pre-operative recovery consultations are free. Call or text (703) 755-8045, message us on WhatsApp, or send the website form."}},
+    {"@type": "Question", "name": "Do you speak Spanish?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our founders are bilingual and a Spanish version of the site is available at almanarecovery.com/es/."}},
+    {"@type": "Question", "name": "How do I pay?", "acceptedAnswer": {"@type": "Answer", "text": "Existing patients can pay by Zelle. Care plans and pricing are discussed during the free consultation."}}
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -215,15 +323,15 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
 <div class="topbar">
   <div class="container">
     <div class="grp">
-      <!-- PHONE: (703) 755-8045 (from live site) — swap to new shared number when set -->
       <a href="tel:+17037558045"><span class="diamond">&#9670;</span>(703) 755-8045</a>
-      <a href="https://wa.me/17032155338" style="color:var(--sage-light)" title="Message us on WhatsApp">WhatsApp</a>
+      <a href="https://wa.me/17037558045" style="color:var(--sage-light)" title="Message us on WhatsApp">WhatsApp</a>
+      <span style="color:var(--gold-light)">Se habla español</span>
     </div>
     <div class="grp">
-      <span>info@almanarecovery.com</span>
+      <a href="mailto:info@almanarecovery.com">info@almanarecovery.com</a>
       <span style="opacity:.4">|</span>
-      <!-- PAYMENT_URL placeholder: Existing Patients -> payment portal -->
-      <a class="pill-ghost" href="#" title="Existing patient payments — portal coming soon">Existing Patients</a>
+      <a class="pill-ghost" href="#payments" title="Existing patient payments">Existing Patients</a>
+      <a class="pill-ghost lang" href="/es/" lang="es" hreflang="es">Español</a>
     </div>
   </div>
 </div>
@@ -236,22 +344,22 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
       <a href="#services">Services</a>
       <a href="#care">Our Care</a>
       <a href="#founders">About</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
-    <!-- BOOKING_URL (Acuity) -->
-    <a class="btn btn-olive book" href="https://app.acuityscheduling.com/schedule.php?owner=39722717">Book a Consultation</a>
+    <a class="btn btn-olive book" href="#contact">Free Consultation</a>
     <button id="navtoggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- ============ HERO ============ -->
 <header id="home" class="hero">
-  <img class="logo" src="assets/logo.png" alt="Almana Recovery &amp; Aesthetics logo">
+  <img class="logo" src="assets/logo.png" alt="Almana Recovery logo">
   <div class="kicker">Luxury Recovery Backed by Clinical Expertise</div>
-  <p>Private, nurse-led post-surgical care designed to provide comfort, safety, and peace of mind throughout every stage of your recovery.</p>
+  <p>Private, registered-nurse-led post-surgical care after plastic surgery, delivered at your home or hotel across Northern Virginia, Washington DC, and Southern Maryland. Comfort, safety, and peace of mind through every stage of your recovery.</p>
   <div class="hero-actions">
-    <a class="btn btn-olive" href="https://app.acuityscheduling.com/schedule.php?owner=39722717">Book a Consultation &rarr;</a>
-    <a class="textlink" style="color:var(--espresso);border-color:var(--gold)" href="#care">How we care</a>
+    <a class="btn btn-olive" href="#contact">Request a Free Consultation &rarr;</a>
+    <a class="textlink" style="color:var(--espresso);border-color:var(--gold)" href="tel:+17037558045">Call or text (703) 755-8045</a>
   </div>
 </header>
 <div class="hero-band">
@@ -261,17 +369,17 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
 <!-- ============ WHO WE ARE ============ -->
 <section id="care" class="who">
   <div class="eyebrow">Who we are</div>
-  <p class="statement">Backed by more than 25 years of nursing experience, Almana brings clinical expertise and quiet luxury to every stage of your post-surgical recovery.</p>
-  <p class="body">Our registered nurses monitor your healing closely, manage comfort and medication, and coordinate every detail — so you can simply rest, protect your results, and recover with confidence.</p>
+  <p class="statement">Founded by two registered nurses with 35 combined years of experience, Almana brings clinical expertise and quiet luxury to every stage of your post-surgical recovery.</p>
+  <p class="body">Our registered nurses, licensed in Virginia, Maryland, and the District of Columbia, monitor your healing closely, manage comfort and medication, and coordinate every detail so you can simply rest, protect your results, and recover with confidence.</p>
 </section>
 
 <!-- ============ TRUST ROW ============ -->
 <div class="trust">
   <div class="container">
-    <div><div class="num">RN-Led</div><div class="label">Licensed registered nurses</div></div>
+    <div><div class="num">RN-Led</div><div class="label">Licensed in VA, MD &amp; DC</div></div>
     <div><div class="num">24 / 7</div><div class="label">Overnight care available</div></div>
     <div><div class="num">Discreet</div><div class="label">Private &amp; confidential</div></div>
-    <div><div class="num">Aligned</div><div class="label">Follows surgeon protocols</div></div>
+    <div><div class="num">Aligned</div><div class="label">Follows your surgeon's protocols</div></div>
   </div>
 </div>
 
@@ -305,14 +413,14 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
       <div class="body">
         <div class="stage"><span class="no">03</span><span class="label">Beyond Recovery</span></div>
         <h3>Ongoing Wellness</h3>
-        <p>Continued care on your terms, in-office or in-home, with lymphatic massage, scar and skin care, and gentle guidance to help you look and feel your very best.</p>
+        <p>Continued care on your terms, in-office or in-home, with lymphatic massage, scar care, seroma monitoring, and gentle guidance to help you look and feel your very best.</p>
         <a class="textlink" href="#contact">Learn more</a>
       </div>
     </article>
   </div>
 </div></section>
 
-<!-- ============ SERVICES (detailed — from original site) ============ -->
+<!-- ============ SERVICES (detailed, from original site) ============ -->
 <section id="services" class="services sec"><div class="container">
   <div class="sec-head">
     <div class="eyebrow">What we offer</div>
@@ -322,27 +430,39 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
   <div class="svc-group">
     <div class="gtitle"><h3>Recovery, Reimagined</h3><span class="line"></span></div>
     <div class="svc-grid">
-      <div class="svc"><div class="no">01</div><h4>Private Transportation</h4><p>Safe, discreet transportation from the surgical center to your home or hotel — a calm, comfortable transition after your procedure.</p></div>
-      <div class="svc"><div class="no">02</div><h4>Overnight Care</h4><p>Compassionate, professional overnight nursing to monitor and assist you through the most critical first hours of recovery.</p></div>
+      <div class="svc"><div class="no">01</div><h4>Private Transportation</h4><p>Safe, discreet transportation from the surgical center to your home or hotel, with a nurse at your side for a calm, comfortable transition after your procedure.</p></div>
+      <div class="svc"><div class="no">02</div><h4>Overnight Nursing Care</h4><p>A registered nurse with you through the night to monitor vital signs, manage medication and comfort, and assist you through the most critical first hours of recovery.</p></div>
       <div class="svc"><div class="no">03</div><h4>Wellness Checks</h4><p>Personalized in-person visits to evaluate healing progression, manage discomfort, and adjust your care plan as you recover.</p></div>
       <div class="svc"><div class="no">04</div><h4>Wound Care</h4><p>Professional wound care provided in-office or in the comfort of your home, following your surgeon's post-operative protocol exactly.</p></div>
-      <div class="svc"><div class="no">05</div><h4>Lymphatic Drainage Massage</h4><p>Gentle, specialized massage therapy to reduce swelling, promote circulation, and accelerate every stage of your recovery.</p></div>
-      <div class="svc"><div class="no">06</div><h4>Drain Removal</h4><p>Sterile, gentle drain removal performed precisely to your surgeon's guidelines — comfortable, safe, and reassuring.</p></div>
+      <div class="svc"><div class="no">05</div><h4>Post-Op Lymphatic Massage</h4><p>Gentle manual lymphatic drainage, in your home or in our Springfield office, to reduce swelling, promote circulation, and support every stage of your recovery.</p></div>
+      <div class="svc"><div class="no">06</div><h4>Drain Removal</h4><p>Sterile, gentle drain removal performed precisely to your surgeon's guidelines. Comfortable, safe, and reassuring.</p></div>
+      <div class="svc"><div class="no">07</div><h4>Staple &amp; Stitch Removal</h4><p>Suture and staple removal at the time your surgeon specifies, with careful inspection of each incision as it heals.</p></div>
+      <div class="svc"><div class="no">08</div><h4>Seroma Management</h4><p>Monitoring and management of post-operative fluid collections in coordination with your surgeon, so small concerns never become big ones.</p></div>
     </div>
   </div>
 
 </div></section>
 
+<!-- ============ PRE-OPERATIVE CONSULTATION ============ -->
+<section id="preop" class="preop"><div class="inner">
+  <div class="eyebrow">Before surgery</div>
+  <h2>A free pre-operative recovery consultation</h2>
+  <p>The best recoveries are planned before surgery day. In a free consultation, a registered nurse reviews your procedure, your surgeon's post-operative instructions, and your home setup, then builds a recovery plan around them: who will be with you the first night, how transport works, when drains and sutures come out, and what to have ready at home.</p>
+  <a class="btn btn-olive" href="#contact">Schedule a Free Consultation &rarr;</a>
+</div></section>
+
 <!-- ============ FOUNDERS ============ -->
 <section id="founders" class="founders">
   <div class="grid">
-    <div class="photo"><img src="assets/founders.jpg" alt="Ana &amp; Alma, founding registered nurses of Almana Recovery &amp; Aesthetics" loading="lazy"></div>
+    <div class="photo"><img src="assets/founders.jpg" alt="Analia Leites, RN and Alma Hernandez-Hercules, RN, founders of Almana Recovery" loading="lazy"></div>
     <div class="copy">
       <div class="eyebrow">Meet the founders</div>
       <h2>Ana &amp; Alma</h2>
       <div class="role">Registered Nurses &middot; Founders</div>
-      <p>Almana was born from years inside the surgical and critical-care world — and a belief that recovery deserves the same expertise and grace as the procedure itself.</p>
+      <p><strong>Analia (Ana) Leites, RN</strong>, 20 years of nursing experience. <strong>Alma Hernandez-Hercules, RN</strong>, 15 years of nursing experience. Both are registered nurses licensed in Virginia, Maryland, and the District of Columbia.</p>
+      <p>Almana was born from years inside the surgical and critical-care world, and a belief that recovery deserves the same expertise and grace as the procedure itself.</p>
       <p>We understand the patient experience intimately, and we show up, every time, with the tools, calm, and clinical judgment to help you heal safely and beautifully.</p>
+      <p style="font-size:13px;color:var(--muted)">Verify our licenses with the <a href="https://www.dhp.virginia.gov/" style="color:var(--olive)">Virginia Department of Health Professions</a>, the <a href="https://mbon.maryland.gov/" style="color:var(--olive)">Maryland Board of Nursing</a>, and <a href="https://dchealth.dc.gov/" style="color:var(--olive)">DC Health</a>.</p>
       <a class="btn btn-outline" style="align-self:flex-start" href="#contact">Our Story</a>
     </div>
   </div>
@@ -365,9 +485,29 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
 <div class="surgeons"><div class="inner">
   <div class="eyebrow">A note to surgeons</div>
   <h2>A trusted extension of your practice</h2>
-  <p>We work seamlessly alongside your team to uphold your post-operative protocols with precision — the bridge between your surgical expertise and the recovery your patients deserve.</p>
+  <p>We work seamlessly alongside your team to uphold your post-operative protocols with precision, the bridge between your surgical expertise and the recovery your patients deserve.</p>
   <a class="btn btn-gold" href="#contact">Partner with Almana &rarr;</a>
 </div></div>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="faq sec"><div class="container">
+  <div class="sec-head">
+    <div class="eyebrow">Questions</div>
+    <h2>Frequently asked questions</h2>
+  </div>
+  <div class="list">
+    <details><summary>Are your nurses registered nurses (RNs)?</summary><p>Yes. Almana was founded and is run by two registered nurses, Analia Leites, RN and Alma Hernandez-Hercules, RN, licensed in Virginia, Maryland, and the District of Columbia. Your care is provided or directly supervised by a registered nurse.</p></details>
+    <details><summary>Which procedures do you support?</summary><p>We care for patients recovering from plastic and cosmetic surgery, including abdominoplasty (tummy tuck), liposuction and body contouring, Brazilian butt lift, breast augmentation, lift or reduction, facelift, rhinoplasty, and mommy makeover procedures, as well as other outpatient surgeries where your surgeon recommends skilled recovery support.</p></details>
+    <details><summary>Where do you provide care?</summary><p>At your home or hotel across Northern Virginia, Washington DC, and Southern Maryland. Lymphatic massage and wound care are also available in our office at 6559 Edsall Road, Springfield, Virginia, by appointment.</p></details>
+    <details><summary>Do you work with my surgeon?</summary><p>Yes. We follow your surgeon's written post-operative protocol exactly and coordinate with their office on drains, sutures, medications, and any concern that comes up during recovery.</p></details>
+    <details><summary>What does overnight care include?</summary><p>A registered nurse stays with you through the night to monitor vital signs, manage pain and medication, assist with mobility, bathroom visits, and compression garments, and respond to anything that arises.</p></details>
+    <details><summary>Do you remove drains, staples, and stitches?</summary><p>Yes. Drain, staple, and suture removal are performed by a registered nurse at the time your surgeon specifies, at home or in our office.</p></details>
+    <details><summary>Do you offer transportation from the surgical center?</summary><p>Yes. Private, discreet transportation from the surgical center to your home or hotel, with a nurse accompanying you.</p></details>
+    <details><summary>Is the consultation free?</summary><p>Yes. Pre-operative recovery consultations are free. Call or text (703) 755-8045, message us on WhatsApp, or send the form below.</p></details>
+    <details><summary>Do you speak Spanish?</summary><p>Yes. Our founders are bilingual. Hablamos español. <a href="/es/" style="color:var(--olive)">Visite nuestro sitio en español.</a></p></details>
+    <details><summary>How do I pay?</summary><p>Existing patients can pay by Zelle. See <a href="#payments" style="color:var(--olive)">Payments</a> below. Care plans and pricing are discussed during your free consultation.</p></details>
+  </div>
+</div></section>
 
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="contact">
@@ -382,18 +522,19 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
     </g>
   </svg>
   <h2>Begin your recovery with Almana</h2>
-  <p>Tell us about your procedure and timeline, and we'll craft a recovery plan made entirely for you.</p>
-  <a class="btn btn-olive" href="https://app.acuityscheduling.com/schedule.php?owner=39722717">Book a Consultation &rarr;</a>
+  <p>Tell us about your procedure and timeline, and we'll craft a recovery plan made entirely for you. Consultations are free.</p>
+  <a class="btn btn-olive" href="tel:+17037558045">Call or Text (703) 755-8045 &rarr;</a>
   <div class="info">
     <span>6559 Edsall Rd, Springfield, VA 22151</span><span class="diamond">&#9670;</span>
     <a href="tel:+17037558045">(703) 755-8045</a><span class="diamond">&#9670;</span>
-    <span>info@almanarecovery.com</span><span class="diamond">&#9670;</span>
-    <span>By appointment</span>
+    <a href="mailto:info@almanarecovery.com">info@almanarecovery.com</a><span class="diamond">&#9670;</span>
+    <span>Monday to Friday, by appointment</span><span class="diamond">&#9670;</span>
+    <span>Serving Northern Virginia, DC &amp; Southern Maryland</span>
   </div>
 
   <!-- Inquiry form: posts to CONTACT_ENDPOINT (self-hosted almana_webform via Cloudflare Tunnel); mailto fallback -->
   <div class="form-wrap">
-    <h3>Request a Consultation</h3>
+    <h3>Request a Free Consultation</h3>
     <div class="sub">Discreet. Personal. Always confidential.</div>
     <form id="inquiry">
       <div class="form-row">
@@ -403,10 +544,11 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
       <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
       <div class="field"><label for="interest">Interested In</label>
         <select id="interest" name="interest">
+          <option>Pre-Operative Recovery Consultation</option>
           <option>Post-Surgical Recovery</option>
-          <option>Lymphatic Drainage Massage</option>
-          <option>Aesthetic Treatments</option>
-          <option>Overnight Care</option>
+          <option>Overnight Nursing Care</option>
+          <option>Post-Op Lymphatic Massage</option>
+          <option>Wound, Drain or Suture Care</option>
           <option>I'm not sure yet</option>
         </select>
       </div>
@@ -418,6 +560,16 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
   </div>
 </section>
 
+<!-- ============ PAYMENTS ============ -->
+<section id="payments" class="pay">
+  <div class="eyebrow">Existing patients</div>
+  <h2>Payments</h2>
+  <p>Existing patients can pay invoices by Zelle. Send payment to the contact below and include your name and the service date in the memo.</p>
+  <!-- ZELLE_CONTACT: confirm with Alma before publishing -->
+  <div class="zelle">Zelle: Almana Recovery &amp; Aesthetics, LLC &middot; (703) 215-5338</div>
+  <p style="margin-top:18px;font-size:14px;color:var(--muted)">Questions about an invoice? Call or text (703) 755-8045.</p>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
@@ -425,21 +577,24 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
       <div>
         <div class="brand">ALMANA</div>
         <div class="rule"><span class="cap"></span><span class="txt">Recovery</span><span class="flex"></span></div>
-        <p class="desc">Concierge post-surgical recovery nursing, delivered with warmth and discretion across Northern Virginia.</p>
+        <p class="desc">Registered-nurse-led post-surgical recovery care, delivered with warmth and discretion across Northern Virginia, Washington DC, and Southern Maryland. Se habla español.</p>
       </div>
       <div class="col">
         <div class="col-h">Explore</div>
         <a href="#services">Services</a>
         <a href="#care">Our Care</a>
         <a href="#founders">About</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
+        <a href="/es/" lang="es" hreflang="es">Español</a>
       </div>
       <div class="col">
         <div class="col-h">Visit</div>
         <span>6559 Edsall Road</span>
         <span>Springfield, Virginia 22151</span>
         <a href="tel:+17037558045">(703) 755-8045</a>
-        <span>info@almanarecovery.com</span>
+        <a href="mailto:info@almanarecovery.com">info@almanarecovery.com</a>
+        <span>Monday to Friday, by appointment</span>
       </div>
     </div>
   </div>
@@ -462,13 +617,13 @@ f.addEventListener('submit',function(e){
   msg.style.color='#6E7F63';msg.textContent='Sending…';
   fetch(CONTACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
     .then(function(r){if(!r.ok)throw 0;return r;})
-    .then(function(){f.reset();msg.style.color='#6E7F63';msg.textContent='Thank you — we’ll be in touch personally, and always confidentially.';})
+    .then(function(){f.reset();msg.style.color='#6E7F63';msg.textContent='Thank you. We will be in touch personally, and always confidentially.';})
     .catch(function(){
       // fallback: open the visitor's email client pre-filled to info@
       var body=encodeURIComponent('Name: '+data.name+'\nPhone: '+data.phone+'\nEmail: '+data.email+'\nInterested in: '+data.interest+'\n\n'+data.message);
       msg.style.color='#8a7f6d';
       msg.innerHTML='Opening your email app to send securely… If nothing happens, email <a href="mailto:info@almanarecovery.com" style="color:#6E7F63">info@almanarecovery.com</a>.';
-      window.location.href='mailto:info@almanarecovery.com?subject='+encodeURIComponent('Consultation request — '+data.name)+'&body='+body;
+      window.location.href='mailto:info@almanarecovery.com?subject='+encodeURIComponent('Free consultation request: '+data.name)+'&body='+body;
     });
 });
 </script>

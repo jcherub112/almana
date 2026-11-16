@@ -1,0 +1,4 @@
+# Cloudflare prepends its managed AI-training directives to this file.
+User-agent: *
+Allow: /
+Sitemap: https://www.almanarecovery.com/sitemap.xml
