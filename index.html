@@ -617,10 +617,10 @@ var CONTACT_ENDPOINT="https://script.google.com/macros/s/AKfycbxioRivQovsVRZyOO9
 var f=document.getElementById('inquiry'),msg=document.getElementById('formmsg');
 f.addEventListener('submit',function(e){
   e.preventDefault();
-  var data={name:name.value,phone:phone.value,email:email.value,interest:interest.value,message:message.value,website:f.website.value};
+  var el=f.elements;var data={name:el.name.value,phone:el.phone.value,email:el.email.value,interest:el.interest.value,message:el.message.value,website:el.website.value};
   msg.style.color='#6E7F63';msg.textContent='Sending…';
   fetch(CONTACT_ENDPOINT,{method:'POST',body:JSON.stringify(data)})
-    .then(function(r){if(!r.ok)throw 0;return r;})
+    .then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){if(!j||!j.ok)throw 0;})
     .then(function(){f.reset();msg.style.color='#6E7F63';msg.textContent='Thank you. We will be in touch personally, and always confidentially.';})
     .catch(function(){
       // fallback: open the visitor's email client pre-filled to info@
