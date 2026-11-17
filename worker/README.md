@@ -9,7 +9,8 @@ Do NOT enable Cloudflare Email Routing on this zone; it would replace the Worksp
 3. Deploy -> New deployment -> gear icon -> Web app.
    Description: inquiry form. Execute as: Me. Who has access: Anyone. -> Deploy.
    Authorize when prompted (it asks for permission to send email as you).
-4. Copy the Web app URL (ends in /exec). Send it to Jason / paste it in the chat.
+4. Copy the Web app URL (ends in /exec).
+   DEPLOYED 2026-11-16 (Version 1, project "Almana inquiry form" in info@almanarecovery.com Drive).
 5. Jason sets CONTACT_ENDPOINT in index.html and es/index.html to that URL and pushes.
 6. Test: submit the website form. Expect "Thank you..." on the page and an email in info@
    with Reply-To set to the client.

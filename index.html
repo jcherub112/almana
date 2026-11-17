@@ -25,7 +25,7 @@
     WHATSAPP .......... REMOVED 2026-11-16 (755-8045 is Grasshopper, no WhatsApp)
     PHONE ............. (703) 755-8045  (the ONE public number everywhere, 2026-11 Alma)
     SPANISH ........... /es/index.html mirror; hreflang wired
-    CONTACT_ENDPOINT .. inquiry form POST target (Cloudflare Tunnel -> almana_webform); mailto fallback active
+    CONTACT_ENDPOINT .. Google Apps Script web app in the info@ Workspace account (see /worker/README.md)
   ============================================================
 -->
 
@@ -613,7 +613,7 @@ t.addEventListener('click',function(){l.classList.toggle('open');});
 l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('open');});
 
 // inquiry form -> CONTACT_ENDPOINT with graceful mailto fallback
-var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // REPLACE with the Apps Script Web App URL (see /worker/README.md)
+var CONTACT_ENDPOINT="https://script.google.com/macros/s/AKfycbxioRivQovsVRZyOO9OtTEk5vos6ORtZ0fGuMu9Juh1zi_SdXDZEWCMk22zoYkvWxuCtw/exec"; // Google Apps Script web app (info@ Workspace account), deployed 2026-11-16
 var f=document.getElementById('inquiry'),msg=document.getElementById('formmsg');
 f.addEventListener('submit',function(e){
   e.preventDefault();
