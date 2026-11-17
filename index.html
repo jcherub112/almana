@@ -478,7 +478,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
   <div class="grid">
     <div class="tcard"><div class="q">&ldquo;</div><p>Ana and Alma are absolute lifesavers. I could not imagine going through an extended tummy tuck with lipo 360 and a mini BBL without them. I felt safe and cared for, and it relieved some of the initial caregiving burden from my husband. Protect your surgical investment and hire them for your aftercare. They are worth every penny.</p><div class="by">H.K. &middot; Extended tummy tuck, lipo 360</div></div>
     <div class="tcard"><div class="q">&ldquo;</div><p>Their expertise, professionalism, and genuine compassion set them apart. They are highly responsive and committed to their patients, making themselves available whenever needed. I trust them completely and recommend their services without hesitation.</p><div class="by">K.K. &middot; Abdominoplasty, then deep-plane facelift</div></div>
-    <div class="tcard"><div class="q">&ldquo;</div><p>The first hours and days were the most difficult, and their presence made all the difference. They always knew exactly what to do to ease my discomfort and help me feel safe. Alma and Ana are exceptional nurses, and I will always be thankful for the difference they made in my recovery.</p><div class="by">Valentina J. &middot; Post-surgical recovery</div></div>
+    <div class="tcard"><div class="q">&ldquo;</div><p>The first hours and days were the most difficult, and their presence made all the difference. They always knew exactly what to do to ease my discomfort and help me feel safe. Alma and Ana are exceptional nurses, and I will always be thankful for the difference they made in my recovery.</p><div class="by">V.J. &middot; Post-surgical recovery</div></div>
   </div>
 </div></div>
 
@@ -613,13 +613,13 @@ t.addEventListener('click',function(){l.classList.toggle('open');});
 l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('open');});
 
 // inquiry form -> CONTACT_ENDPOINT with graceful mailto fallback
-var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // Cloudflare Worker: see /worker/README.md
+var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // REPLACE with the Apps Script Web App URL (see /worker/README.md)
 var f=document.getElementById('inquiry'),msg=document.getElementById('formmsg');
 f.addEventListener('submit',function(e){
   e.preventDefault();
   var data={name:name.value,phone:phone.value,email:email.value,interest:interest.value,message:message.value,website:f.website.value};
   msg.style.color='#6E7F63';msg.textContent='Sending…';
-  fetch(CONTACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+  fetch(CONTACT_ENDPOINT,{method:'POST',body:JSON.stringify(data)})
     .then(function(r){if(!r.ok)throw 0;return r;})
     .then(function(){f.reset();msg.style.color='#6E7F63';msg.textContent='Thank you. We will be in touch personally, and always confidentially.';})
     .catch(function(){

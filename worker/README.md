@@ -1,31 +1,24 @@
-# Almana inquiry form worker
+# Almana inquiry form receiver (Google Apps Script)
 
-What it does: receives the website contact form (JSON POST) and emails it to info@almanarecovery.com
-via Cloudflare Email Routing. No third-party form service; nothing stored.
+almanarecovery.com mail is on Google Workspace (MX smtp.google.com), so the receiver lives there too.
+Do NOT enable Cloudflare Email Routing on this zone; it would replace the Workspace MX records.
 
-## Deploy (Jason, ~5 minutes, Cloudflare dashboard)
-1. Cloudflare dashboard -> almanarecovery.com -> Email -> Email Routing: confirm it is ON and
-   info@almanarecovery.com is a routing address (it already forwards to Higgins). Also add a
-   destination address if the dashboard asks for one, and verify it from the inbox.
-2. Workers & Pages -> Create -> Create Worker -> name "almana-inquiry" -> Deploy, then "Edit code":
-   paste worker.js over the default code -> Deploy.
-3. Worker -> Settings -> Bindings -> Add -> "Send email":
-   variable name INQUIRY_EMAIL, destination address info@almanarecovery.com. Save.
-4. Worker -> Settings -> Domains & Routes -> Add -> Route:
-   route form.almanarecovery.com/*  zone almanarecovery.com. (Or add a Custom Domain form.almanarecovery.com.)
-   Cloudflare creates the DNS record for a Custom Domain automatically; for a Route, add a proxied
-   AAAA record form -> 100:: first.
-5. Test from a terminal:
-   curl -X POST https://form.almanarecovery.com/inquiry -H 'Content-Type: application/json' \
-     -H 'Origin: https://www.almanarecovery.com' \
-     -d '{"name":"Test","phone":"7035550100","email":"test@example.com","interest":"Test","message":"hello"}'
-   Expect {"ok":true} and an email in the info@ inbox.
+## Deploy (Jason or Alma, ~5 minutes, signed in as info@almanarecovery.com or another Workspace user)
+1. Go to https://script.google.com -> New project. Name it "Almana inquiry form".
+2. Replace the default code with the contents of Code.gs. Save (Cmd-S).
+3. Deploy -> New deployment -> gear icon -> Web app.
+   Description: inquiry form. Execute as: Me. Who has access: Anyone. -> Deploy.
+   Authorize when prompted (it asks for permission to send email as you).
+4. Copy the Web app URL (ends in /exec). Send it to Jason / paste it in the chat.
+5. Jason sets CONTACT_ENDPOINT in index.html and es/index.html to that URL and pushes.
+6. Test: submit the website form. Expect "Thank you..." on the page and an email in info@
+   with Reply-To set to the client.
 
-Or with wrangler: `npx wrangler login` then `npx wrangler deploy` from this folder.
-
-The site's index.html already posts to https://form.almanarecovery.com/inquiry and falls back to
-mailto: only if the request fails, so nothing on the site needs to change once this is live.
-
-Note on privacy: inquiries may contain health details. This path keeps them inside Alma's own
-Cloudflare account and mailbox. Cloudflare's standard plan does not include a HIPAA BAA; same posture
-as the existing email inbox.
+## Notes
+- The site posts JSON as text/plain so the browser makes a simple CORS request; Apps Script
+  Web Apps answer those from any origin after the Google redirect.
+- MailApp quota: 100 emails/day on Workspace Starter, 1,500/day on higher tiers. Plenty.
+- If the script is deployed from Alma's personal Gmail instead of the Workspace account, it still
+  works but the email arrives "from" that Gmail. Prefer the Workspace account.
+- Changing the code later requires Deploy -> Manage deployments -> edit -> New version, or the
+  /exec URL keeps serving the old code.

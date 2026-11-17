@@ -480,7 +480,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
   <div class="grid">
     <div class="tcard"><div class="q">&ldquo;</div><p>Ana y Alma son unas verdaderas salvavidas. No me imagino pasar por una abdominoplastia extendida con lipo 360 y un mini BBL sin ellas. Me sentí segura y cuidada, y aliviaron parte de la carga inicial de cuidado de mi esposo. Protege tu inversión quirúrgica y contrátalas para tu recuperación. Valen cada centavo.</p><div class="by">H.K. &middot; Abdominoplastia extendida, lipo 360 (traducido)</div></div>
     <div class="tcard"><div class="q">&ldquo;</div><p>Su experiencia, profesionalismo y compasión genuina las distinguen. Son muy receptivas y comprometidas con sus pacientes, disponibles siempre que se les necesita. Confío plenamente en ellas y recomiendo sus servicios sin dudarlo.</p><div class="by">K.K. &middot; Abdominoplastia, luego lifting facial (traducido)</div></div>
-    <div class="tcard"><div class="q">&ldquo;</div><p>Las primeras horas y días fueron los más difíciles, y su presencia marcó toda la diferencia. Siempre supieron exactamente qué hacer para aliviar mi malestar y ayudarme a sentirme segura. Alma y Ana son enfermeras excepcionales, y siempre estaré agradecida por la diferencia que hicieron en mi recuperación.</p><div class="by">Valentina J. &middot; Recuperación postquirúrgica (traducido)</div></div>
+    <div class="tcard"><div class="q">&ldquo;</div><p>Las primeras horas y días fueron los más difíciles, y su presencia marcó toda la diferencia. Siempre supieron exactamente qué hacer para aliviar mi malestar y ayudarme a sentirme segura. Alma y Ana son enfermeras excepcionales, y siempre estaré agradecida por la diferencia que hicieron en mi recuperación.</p><div class="by">V.J. &middot; Recuperación postquirúrgica (traducido)</div></div>
   </div>
 </div></div>
 
@@ -615,13 +615,13 @@ t.addEventListener('click',function(){l.classList.toggle('open');});
 l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('open');});
 
 // inquiry form -> CONTACT_ENDPOINT with graceful mailto fallback
-var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // Cloudflare Worker: see /worker/README.md
+var CONTACT_ENDPOINT="https://form.almanarecovery.com/inquiry"; // REPLACE with the Apps Script Web App URL (see /worker/README.md)
 var f=document.getElementById('inquiry'),msg=document.getElementById('formmsg');
 f.addEventListener('submit',function(e){
   e.preventDefault();
   var data={name:name.value,phone:phone.value,email:email.value,interest:interest.value,message:message.value,website:f.website.value};
   msg.style.color='#6E7F63';msg.textContent='Enviando…';
-  fetch(CONTACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+  fetch(CONTACT_ENDPOINT,{method:'POST',body:JSON.stringify(data)})
     .then(function(r){if(!r.ok)throw 0;return r;})
     .then(function(){f.reset();msg.style.color='#6E7F63';msg.textContent='Gracias. Nos comunicaremos con usted personalmente, y siempre de forma confidencial.';})
     .catch(function(){
